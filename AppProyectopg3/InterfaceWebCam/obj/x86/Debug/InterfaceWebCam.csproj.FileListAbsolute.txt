@@ -1,0 +1,63 @@
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+D:\ProjetosTestes\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+D:\Projetos\C#\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Samuel\Desktop\TesteWebCam\InterfaceWebCam\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+C:\Users\jorge\Desktop\Webcam Capture\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csproj.GenerateResource.Cache
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+C:\Users\jorge\Desktop\Webcam Capture\C#\C#\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csproj.GenerateResource.Cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csproj.GenerateResource.Cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb

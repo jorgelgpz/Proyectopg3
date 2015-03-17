@@ -1,0 +1,15 @@
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\AppProyectopg3.exe.config
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Layers.UI.frmprincipal.resources
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Properties.Resources.resources
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.csproj.GenerateResource.Cache
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\AppProyectopg3.exe
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\AppProyectopg3.pdb
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.exe
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.pdb
+c:\users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Layers.UI.frmLoging.resources
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Layers.UI.frmMantenimientos.resources
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.csprojResolveAssemblyReference.cache
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\InterfaceWebCam.exe
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\AppProyectopg3\bin\Debug\WebCamCapture.pdb
