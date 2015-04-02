@@ -54,6 +54,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         private void CargarDGV()
         {
             dgvUsuarios.RowTemplate.Height = 100;
+           
             dgvUsuarios.DataSource = GestorMantenimientos.GetInstacia().GetUsuarios();
 
         }
@@ -88,7 +89,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 oUsuario.NombreNew = this.txtUser.Text;
                 oUsuario.ContrasenaNew = this.txtPass.Text;
-                oUsuario.Foto = cadenaBytes;
+                //oUsuario.Foto = cadenaBytes;
+                oUsuario.Foto = (Byte[])Foto.Tag;
 
                 GestorNewUser.GetInstacia().NewUser(oUsuario);
                 this.CargarDGV();

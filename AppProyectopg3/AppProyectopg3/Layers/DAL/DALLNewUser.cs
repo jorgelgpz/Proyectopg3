@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UTN.Winform.AppProyectopg3.Layers.Entities;
 using UTN.Winform.AppProyectopg3.Layers.Persistencia;
 
@@ -61,6 +63,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         public void InsertNewUser(Usuario pUsuario)
         {
+       
+
             int consecutivo = this.GetConsecutivo();
 
             string sql = @"usp_INSERT_Usuarios";
@@ -118,6 +122,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         } 
         #endregion
+
+        
 
 
 
