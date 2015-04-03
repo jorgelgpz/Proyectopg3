@@ -47,7 +47,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         #region Obtiene consecutivo de CentroPenales
 
-        internal int GetConsecutivoCentroPenales()
+        internal static int GetConsecutivoCentroPenales()
         {
 
             // Investigue como crear secuencias en SQLServer
@@ -79,7 +79,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         #region Obtiene consecutivo de Fotos
 
-        internal int GetConsecutivoFotos()
+        internal static int GetConsecutivoFotos()
         {
 
             // Investigue como crear secuencias en SQLServer
@@ -111,7 +111,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         #region Obtiene consecutivo de SalarioBase
 
-        internal int GetConsecutivoSalarioBase()
+        internal static int GetConsecutivoSalarioBase()
         {
 
             // Investigue como crear secuencias en SQLServer
@@ -143,7 +143,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         #region Obtiene consecutivo de Eventos
 
-        internal int GetConsecutivoEventos()
+        internal static int GetConsecutivoEventos()
         {
 
             // Investigue como crear secuencias en SQLServer
@@ -175,7 +175,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL
 
         #region Obtiene consecutivo de Reclusos
 
-        internal int GetConsecutivoReclusos()
+        internal static int GetConsecutivoReclusos()
         {
 
             // Investigue como crear secuencias en SQLServer

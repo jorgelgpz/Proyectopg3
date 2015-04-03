@@ -29,7 +29,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
             }
 
             return Instancia;
-        } 
+        }
         #endregion
 
         #region Get lista usuarios
@@ -38,7 +38,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
 
             BLLMantenimientos _BLLMantenimientos = new BLLMantenimientos();
             return _BLLMantenimientos.GetUsuarios();
-        } 
+        }
         #endregion
 
         #region inserta delito
@@ -46,7 +46,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLDelitos oBLLDelitos = new BLLDelitos();
             oBLLDelitos.InsertNewDelito(pDelitos);
-        } 
+        }
         #endregion
 
         #region Get lista de delitos
@@ -54,7 +54,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLDelitos OBLLDelitos = new BLLDelitos();
             return OBLLDelitos.GetListaDelitos();
-        } 
+        }
         #endregion
 
         #region DelitosReclusos
@@ -68,9 +68,42 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLDelitosReclusos oBLLDelitosReclusos = new BLLDelitosReclusos();
             oBLLDelitosReclusos.BorrarDelitoRecluso(pDelitosReclusos);
+        }
+        #endregion
+
+        #region inserta un centro penal
+        public void InsertNewCentroPenales(CentroPenales pCentroPenales)
+        {
+            BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
+            oBLLCentroPenales.InsertNewCentroPenales(pCentroPenales);
+        }
+
+        #endregion
+
+        #region Get lista de centro penales
+        public List<CentroPenales> GetListaPenales()
+        {
+            BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
+            return oBLLCentroPenales.GetListaPenales();
+        }
+
+        #endregion
+
+        #region Actualiza centro penales
+        public void ActualizaCentroPenales(CentroPenales pCentroPenales)
+        {
+            BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
+            oBLLCentroPenales.ActualizaCentroPenales(pCentroPenales);
         } 
         #endregion
 
+        #region delete logico de centro penales
+        public void DeleteLogicalCentroPenales(CentroPenales pCentroPenales)
+        {
+            BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
+            oBLLCentroPenales.DeleteLogicalCentroPenales(pCentroPenales);
+        } 
+        #endregion
 
 
 

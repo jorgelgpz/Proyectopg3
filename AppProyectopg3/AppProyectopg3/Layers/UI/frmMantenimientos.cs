@@ -49,6 +49,11 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 this.CargarDGVDelitos();
             }
 
+            if (tbpCentroPenales.Focus())
+            {
+                this.CargarDGVCentroPenales();
+            }
+
 
 
         }
@@ -66,7 +71,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             Cancelar();
         }
 
-       
+
 
         private void tbpNuevoUsuario_Click(object sender, EventArgs e)
         {
@@ -275,7 +280,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         {
             errorProvider1.Clear();
 
-            if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo(this.rtbDescripcionDelitos.Text))
+            if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo500(this.rtbDescripcionDelitos.Text))
             {
                 errorProvider1.SetError(this.rtbDescripcionDelitos, Validaciones.GetInstancia().descripcion());
                 return;
@@ -297,6 +302,73 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
         #endregion
+
+
+        private void CargarDGVCentroPenales()
+        {
+            dgvCentroPenales.DataSource = GestorMantenimientos.GetInstacia().GetListaPenales();
+        }
+
+        private void btnAceptarCentroPenales_Click(object sender, EventArgs e)
+        {
+            #region validaciones de campo de centro penales
+            this.errorProvider1.Clear();
+
+            if (Validaciones.GetInstancia().CampoRequerido(this.txtNombreCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtNombreCentroPenales.Text))
+            {
+
+                this.errorProvider1.SetError(this.txtNombreCentroPenales, Validaciones.GetInstancia().descripcion());
+                return;
+            }
+
+            if (Validaciones.GetInstancia().CampoRequerido(this.txtDireccionCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtDireccionCentroPenales.Text))
+            {
+
+                this.errorProvider1.SetError(this.txtDireccionCentroPenales, Validaciones.GetInstancia().descripcion());
+                return;
+            }
+
+            if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono1CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono1CentroPenales.Text))
+            {
+
+                this.errorProvider1.SetError(this.txtTelefono1CentroPenales, Validaciones.GetInstancia().descripcion());
+                return;
+            }
+
+            if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono2CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono2CentroPenales.Text))
+            {
+
+                this.errorProvider1.SetError(this.txtTelefono2CentroPenales, Validaciones.GetInstancia().descripcion());
+                return;
+            }
+            
+            #endregion
+
+            CentroPenales oCentroPenales = new CentroPenales();
+
+            oCentroPenales.Nombre = this.txtNombreCentroPenales.Text;
+            oCentroPenales.Direccion = this.txtDireccionCentroPenales.Text;
+            oCentroPenales.Telefono1 = Convert.ToInt32(this.txtTelefono1CentroPenales.Text);
+            oCentroPenales.Telefono2 = Convert.ToInt32(this.txtTelefono2CentroPenales.Text);
+
+            GestorMantenimientos.GetInstacia().InsertNewCentroPenales(oCentroPenales);
+
+            this.CargarDGVCentroPenales();
+
+            this.txtNombreCentroPenales.Text = "";
+            this.txtDireccionCentroPenales.Text = "";
+            this.txtTelefono1CentroPenales.Text = "";
+            this.txtTelefono2CentroPenales.Text = "";
+
+        }
+
+
+
+
+        private void btnCancelarCentroPenales_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
+        }
 
 
 

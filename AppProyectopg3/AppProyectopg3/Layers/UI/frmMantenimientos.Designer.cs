@@ -82,6 +82,11 @@
             this.btnAceptarCentroPenales = new System.Windows.Forms.Button();
             this.btnCancelarCentroPenales = new System.Windows.Forms.Button();
             this.dgvCentroPenales = new System.Windows.Forms.DataGridView();
+            this.NombreCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono1CentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono2CentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -629,6 +634,7 @@
             this.btnAceptarCentroPenales.TabIndex = 0;
             this.btnAceptarCentroPenales.Text = "Aceptar";
             this.btnAceptarCentroPenales.UseVisualStyleBackColor = true;
+            this.btnAceptarCentroPenales.Click += new System.EventHandler(this.btnAceptarCentroPenales_Click);
             // 
             // btnCancelarCentroPenales
             // 
@@ -638,14 +644,54 @@
             this.btnCancelarCentroPenales.TabIndex = 1;
             this.btnCancelarCentroPenales.Text = "Cancelar";
             this.btnCancelarCentroPenales.UseVisualStyleBackColor = true;
+            this.btnCancelarCentroPenales.Click += new System.EventHandler(this.btnCancelarCentroPenales_Click);
             // 
             // dgvCentroPenales
             // 
             this.dgvCentroPenales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCentroPenales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreCentroPenales,
+            this.IdCentroPenales,
+            this.DireccionCentroPenales,
+            this.Telefono1CentroPenales,
+            this.Telefono2CentroPenales});
             this.dgvCentroPenales.Location = new System.Drawing.Point(23, 226);
             this.dgvCentroPenales.Name = "dgvCentroPenales";
             this.dgvCentroPenales.Size = new System.Drawing.Size(874, 276);
             this.dgvCentroPenales.TabIndex = 3;
+            // 
+            // NombreCentroPenales
+            // 
+            this.NombreCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreCentroPenales.DataPropertyName = "Nombre";
+            this.NombreCentroPenales.HeaderText = "Nombre";
+            this.NombreCentroPenales.Name = "NombreCentroPenales";
+            // 
+            // IdCentroPenales
+            // 
+            this.IdCentroPenales.DataPropertyName = "id";
+            this.IdCentroPenales.HeaderText = "ID";
+            this.IdCentroPenales.Name = "IdCentroPenales";
+            this.IdCentroPenales.Visible = false;
+            // 
+            // DireccionCentroPenales
+            // 
+            this.DireccionCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DireccionCentroPenales.DataPropertyName = "Direccion";
+            this.DireccionCentroPenales.HeaderText = "Direccion";
+            this.DireccionCentroPenales.Name = "DireccionCentroPenales";
+            // 
+            // Telefono1CentroPenales
+            // 
+            this.Telefono1CentroPenales.DataPropertyName = "Telefono1";
+            this.Telefono1CentroPenales.HeaderText = "Telefono";
+            this.Telefono1CentroPenales.Name = "Telefono1CentroPenales";
+            // 
+            // Telefono2CentroPenales
+            // 
+            this.Telefono2CentroPenales.DataPropertyName = "Telefono2";
+            this.Telefono2CentroPenales.HeaderText = "Telefono";
+            this.Telefono2CentroPenales.Name = "Telefono2CentroPenales";
             // 
             // frmMantenimientos
             // 
@@ -740,5 +786,10 @@
         private System.Windows.Forms.Label lblTelefono2;
         private System.Windows.Forms.Label lblTelefono1;
         private System.Windows.Forms.TextBox txtNombreCentroPenales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCentroPenales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCentroPenales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DireccionCentroPenales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono1CentroPenales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono2CentroPenales;
     }
 }

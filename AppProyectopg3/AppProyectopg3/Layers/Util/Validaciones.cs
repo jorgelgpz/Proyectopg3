@@ -52,7 +52,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Util
             return Error;
         }
 
-        public bool CampoMuyLargo(string parametro)
+        public bool CampoMuyLargo500(string parametro)
         {
             this.LimpiaError();
 
@@ -65,6 +65,40 @@ namespace UTN.Winform.AppProyectopg3.Layers.Util
             return Error;
         }
 
+        public bool CampoMuyLargo1000(string parametro)
+        {
+            this.LimpiaError();
+
+            if (parametro.Length > 1000)
+            {
+                Error = true;
+                this.Descripcion = "Texto demasiado largo";
+            }
+
+            return Error;
+        }
+
+        public bool CampoNumerico(string parametro)
+        {
+            this.LimpiaError();
+
+            try
+            {
+
+                Int32.Parse(parametro);
+
+            }
+            catch
+            {
+
+                Error = true;
+                this.Descripcion = "El formato de entrada debe ser numerico";
+            }
+
+
+            return Error;
+
+        }
 
 
         public string descripcion()
