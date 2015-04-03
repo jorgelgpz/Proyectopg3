@@ -25,5 +25,10 @@ namespace UTN.Winform.AppProyectopg3.Layers.BLL.BLLMantenimientos
             return oDALDelitos.GetListaDelitos();
         }
 
+
+
+
+
+
     }//fin class
 }

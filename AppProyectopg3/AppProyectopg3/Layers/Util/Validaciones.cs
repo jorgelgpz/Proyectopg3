@@ -56,7 +56,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Util
         {
             this.LimpiaError();
 
-            if (parametro.Length > 49)
+            if (parametro.Length > 500)
             {
                 Error = true;
                 this.Descripcion = "Texto demasiado largo";

@@ -41,3 +41,10 @@ C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\WebCamCaptur
 C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.csproj.GenerateResource.Cache
 C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.dll
 C:\Users\jorge\documents\visual studio 2012\Projects\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\bin\Debug\WebCamCapture.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.csproj.GenerateResource.Cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.dll
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\WebCamCapture\obj\Debug\WebCamCapture.pdb

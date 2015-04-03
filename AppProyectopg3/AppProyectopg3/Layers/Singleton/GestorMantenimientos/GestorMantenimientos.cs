@@ -57,6 +57,23 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         } 
         #endregion
 
+        #region DelitosReclusos
+        public void InsertNewDelito(DelitosReclusos pDelitosReclusos)
+        {
+            BLLDelitosReclusos oBLLDelitosReclusos = new BLLDelitosReclusos();
+            oBLLDelitosReclusos.InsertNewDelito(pDelitosReclusos);
+        }
+
+        public void BorrarDelitoRecluso(DelitosReclusos pDelitosReclusos)
+        {
+            BLLDelitosReclusos oBLLDelitosReclusos = new BLLDelitosReclusos();
+            oBLLDelitosReclusos.BorrarDelitoRecluso(pDelitosReclusos);
+        } 
+        #endregion
+
+
+
+
 
 
 

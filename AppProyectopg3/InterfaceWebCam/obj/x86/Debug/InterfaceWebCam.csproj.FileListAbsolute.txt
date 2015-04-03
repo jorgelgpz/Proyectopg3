@@ -61,3 +61,13 @@ C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWeb
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csproj.GenerateResource.Cache
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\bin\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\bin\Debug\InterfaceWebCam.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\bin\Debug\WebCamCapture.dll
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\bin\Debug\WebCamCapture.pdb
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.frmExibeWebCam.resources
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.Properties.Resources.resources
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.csproj.GenerateResource.Cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.exe
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\InterfaceWebCam\obj\x86\Debug\InterfaceWebCam.pdb

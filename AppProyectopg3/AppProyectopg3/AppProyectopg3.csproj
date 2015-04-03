@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Layers\BLL\BLLLogin.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitos.cs" />
+    <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitosReclusos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLMantenimientos.cs" />
     <Compile Include="Layers\BLL\BLLNewUser.cs" />
     <Compile Include="Layers\DAL\DALConsecutivos.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Layers\DAL\DALMantenimientos\DALReclusos.cs" />
     <Compile Include="Layers\DAL\DALMantenimientos\DALSalarioBase.cs" />
     <Compile Include="Layers\Entities\Delitos.cs" />
+    <Compile Include="Layers\Entities\DTO\DelitosReclusos.cs" />
     <Compile Include="Layers\Entities\DTO\Users.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaUsuario.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
