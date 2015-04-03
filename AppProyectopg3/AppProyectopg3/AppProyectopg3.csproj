@@ -46,11 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layers\BLL\BLLLogin.cs" />
+    <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLMantenimientos.cs" />
     <Compile Include="Layers\BLL\BLLNewUser.cs" />
+    <Compile Include="Layers\DAL\DALConsecutivos.cs" />
     <Compile Include="Layers\DAL\DALLNewUser.cs" />
     <Compile Include="Layers\DAL\DALLogin.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALCentroPenales.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALDelitos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALDelitosReclusos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALEventos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALEventosReclusos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALFotos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALFotosReclusos.cs" />
     <Compile Include="Layers\DAL\DALMantenimientos\DALLUsers.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALReclusos.cs" />
+    <Compile Include="Layers\DAL\DALMantenimientos\DALSalarioBase.cs" />
+    <Compile Include="Layers\Entities\Delitos.cs" />
     <Compile Include="Layers\Entities\DTO\Users.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaUsuario.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />

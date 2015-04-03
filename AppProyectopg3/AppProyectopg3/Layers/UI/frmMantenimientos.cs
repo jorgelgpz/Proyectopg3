@@ -34,31 +34,56 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         private void frmMantenimientos_Load(object sender, EventArgs e)
         {
             this.CargarDGV();
-    
+
         }
+
+        private void tbp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tbpNuevoUsuario.Focus())
+            {
+                this.CargarDGV();
+            }
+
+            if (tbpDelitos.Focus())
+            {
+                this.CargarDGVDelitos();
+            }
+
+
+
+        }
+
+        private void Cancelar()
+        {
+            this.DialogResult = DialogResult.Abort;
+        }
+
+
+        #region pestana new Usuarios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Abort;
-
+            Cancelar();
         }
+
+       
 
         private void tbpNuevoUsuario_Click(object sender, EventArgs e)
         {
             this.txtUser.Focus();
         }
-      
+
 
 
         #region pobla el dgv con los usuarios
         private void CargarDGV()
         {
             dgvUsuarios.RowTemplate.Height = 100;
-           
+
             dgvUsuarios.DataSource = GestorMantenimientos.GetInstacia().GetUsuarios();
 
         }
-        
+
         #endregion
 
         #region nuevo usuario
@@ -109,7 +134,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             }
         }
-        
+
         #endregion
 
         #region limpia todos los campos
@@ -130,7 +155,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             MessageBox.Show("El usuario ha sido agregado");
         }
-        
+
         #endregion
 
         #region validar los campos
@@ -172,7 +197,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             ValidacionesOK = true;
 
         }
-        
+
         #endregion
 
         #region muestra el teclado en pantalla
@@ -183,9 +208,9 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 ExternalApp.GetInstacia().Teclado();
             }
         }
-        
+
         #endregion
-       
+
         #region captura foto
         private void pictureBoxFoto_Click(object sender, EventArgs e)
         {
@@ -230,8 +255,50 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
         }
-        
+
         #endregion
+
+
+        #endregion
+
+
+
+        #region pestana Delitos
+        private void CargarDGVDelitos()
+        {
+
+            dgvDelitos.DataSource = GestorMantenimientos.GetInstacia().GetListaDelitos();
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+
+            if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo(this.rtbDescripcionDelitos.Text))
+            {
+                errorProvider1.SetError(this.rtbDescripcionDelitos, Validaciones.GetInstancia().descripcion());
+                return;
+            }
+
+            Delitos oDelitos = new Delitos();
+            oDelitos.descripcion = this.rtbDescripcionDelitos.Text;
+
+            GestorMantenimientos.GetInstacia().InsertNewDelito(oDelitos);
+            this.CargarDGVDelitos();
+            this.rtbDescripcionDelitos.Text = "";
+        }
+
+        private void btnCacelar_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
+
+        }
+
+
+        #endregion
+
+
 
 
 

@@ -52,22 +52,23 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPassV = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbpDelitos = new System.Windows.Forms.TabPage();
+            this.dgvDelitos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCacelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.rtbDescripcionDelitos = new System.Windows.Forms.RichTextBox();
+            this.tbpCentroPenales = new System.Windows.Forms.TabPage();
+            this.tbpSalario = new System.Windows.Forms.TabPage();
+            this.tbpEventos = new System.Windows.Forms.TabPage();
+            this.tbpReclusos = new System.Windows.Forms.TabPage();
             this.sstUser = new System.Windows.Forms.StatusStrip();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCacelar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -77,26 +78,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpUser.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tbpDelitos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelitos)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbp
             // 
             this.tbp.Controls.Add(this.tbpNuevoUsuario);
-            this.tbp.Controls.Add(this.tabPage2);
-            this.tbp.Controls.Add(this.tabPage1);
-            this.tbp.Controls.Add(this.tabPage3);
-            this.tbp.Controls.Add(this.tabPage4);
-            this.tbp.Controls.Add(this.tabPage5);
+            this.tbp.Controls.Add(this.tbpDelitos);
+            this.tbp.Controls.Add(this.tbpCentroPenales);
+            this.tbp.Controls.Add(this.tbpSalario);
+            this.tbp.Controls.Add(this.tbpEventos);
+            this.tbp.Controls.Add(this.tbpReclusos);
             this.tbp.Font = new System.Drawing.Font("Lucida Calligraphy", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbp.Location = new System.Drawing.Point(0, 0);
             this.tbp.Name = "tbp";
             this.tbp.SelectedIndex = 0;
             this.tbp.Size = new System.Drawing.Size(931, 558);
             this.tbp.TabIndex = 0;
+            this.tbp.SelectedIndexChanged += new System.EventHandler(this.tbp_SelectedIndexChanged);
             // 
             // tbpNuevoUsuario
             // 
@@ -341,119 +344,29 @@
             this.txtPassV.Size = new System.Drawing.Size(148, 22);
             this.txtPassV.TabIndex = 5;
             // 
-            // tabPage2
+            // tbpDelitos
             // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(923, 530);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Delitos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tbpDelitos.Controls.Add(this.dgvDelitos);
+            this.tbpDelitos.Controls.Add(this.tableLayoutPanel3);
+            this.tbpDelitos.Controls.Add(this.tableLayoutPanel1);
+            this.tbpDelitos.Location = new System.Drawing.Point(4, 24);
+            this.tbpDelitos.Name = "tbpDelitos";
+            this.tbpDelitos.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpDelitos.Size = new System.Drawing.Size(923, 530);
+            this.tbpDelitos.TabIndex = 1;
+            this.tbpDelitos.Text = "Delitos";
+            this.tbpDelitos.UseVisualStyleBackColor = true;
             // 
-            // sstUser
+            // dgvDelitos
             // 
-            this.sstUser.Location = new System.Drawing.Point(0, 561);
-            this.sstUser.Name = "sstUser";
-            this.sstUser.Size = new System.Drawing.Size(943, 22);
-            this.sstUser.TabIndex = 1;
-            this.sstUser.Text = "statusStrip1";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 530);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Centros Penales";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(923, 530);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "Salario";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(923, 530);
-            this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "Eventos";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(923, 530);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Reclusos";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(45, 15);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Codigo";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.10593F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.89407F));
-            this.tableLayoutPanel1.Controls.Add(this.lblCodigo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtCodigo, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblDescripcion, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 61);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(793, 195);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(98, 3);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(85, 22);
-            this.txtCodigo.TabIndex = 1;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(3, 97);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(76, 15);
-            this.lblDescripcion.TabIndex = 2;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(98, 100);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(692, 92);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.dgvDelitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDelitos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descripcion});
+            this.dgvDelitos.Location = new System.Drawing.Point(22, 266);
+            this.dgvDelitos.Name = "dgvDelitos";
+            this.dgvDelitos.Size = new System.Drawing.Size(793, 230);
+            this.dgvDelitos.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -462,21 +375,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnCacelar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnAgregar, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(299, 308);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(296, 189);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(519, 59);
             this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(3, 3);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(116, 36);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnCacelar
             // 
@@ -486,12 +390,121 @@
             this.btnCacelar.TabIndex = 1;
             this.btnCacelar.Text = "Cancelar";
             this.btnCacelar.UseVisualStyleBackColor = true;
+            this.btnCacelar.Click += new System.EventHandler(this.btnCacelar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(3, 3);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(116, 36);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.10593F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.89407F));
+            this.tableLayoutPanel1.Controls.Add(this.lblDescripcion, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rtbDescripcionDelitos, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 34);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.97436F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(837, 140);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(3, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(76, 15);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // rtbDescripcionDelitos
+            // 
+            this.rtbDescripcionDelitos.Location = new System.Drawing.Point(104, 3);
+            this.rtbDescripcionDelitos.Name = "rtbDescripcionDelitos";
+            this.rtbDescripcionDelitos.Size = new System.Drawing.Size(691, 125);
+            this.rtbDescripcionDelitos.TabIndex = 3;
+            this.rtbDescripcionDelitos.Text = "";
+            // 
+            // tbpCentroPenales
+            // 
+            this.tbpCentroPenales.Location = new System.Drawing.Point(4, 24);
+            this.tbpCentroPenales.Name = "tbpCentroPenales";
+            this.tbpCentroPenales.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpCentroPenales.Size = new System.Drawing.Size(923, 530);
+            this.tbpCentroPenales.TabIndex = 2;
+            this.tbpCentroPenales.Text = "Centros Penales";
+            this.tbpCentroPenales.UseVisualStyleBackColor = true;
+            // 
+            // tbpSalario
+            // 
+            this.tbpSalario.Location = new System.Drawing.Point(4, 24);
+            this.tbpSalario.Name = "tbpSalario";
+            this.tbpSalario.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpSalario.Size = new System.Drawing.Size(923, 530);
+            this.tbpSalario.TabIndex = 3;
+            this.tbpSalario.Text = "Salario";
+            this.tbpSalario.UseVisualStyleBackColor = true;
+            // 
+            // tbpEventos
+            // 
+            this.tbpEventos.Location = new System.Drawing.Point(4, 24);
+            this.tbpEventos.Name = "tbpEventos";
+            this.tbpEventos.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpEventos.Size = new System.Drawing.Size(923, 530);
+            this.tbpEventos.TabIndex = 4;
+            this.tbpEventos.Text = "Eventos";
+            this.tbpEventos.UseVisualStyleBackColor = true;
+            // 
+            // tbpReclusos
+            // 
+            this.tbpReclusos.Location = new System.Drawing.Point(4, 24);
+            this.tbpReclusos.Name = "tbpReclusos";
+            this.tbpReclusos.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpReclusos.Size = new System.Drawing.Size(923, 530);
+            this.tbpReclusos.TabIndex = 5;
+            this.tbpReclusos.Text = "Reclusos";
+            this.tbpReclusos.UseVisualStyleBackColor = true;
+            // 
+            // sstUser
+            // 
+            this.sstUser.Location = new System.Drawing.Point(0, 561);
+            this.sstUser.Name = "sstUser";
+            this.sstUser.Size = new System.Drawing.Size(942, 22);
+            this.sstUser.TabIndex = 1;
+            this.sstUser.Text = "statusStrip1";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 48;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // frmMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 583);
+            this.ClientSize = new System.Drawing.Size(942, 583);
             this.Controls.Add(this.sstUser);
             this.Controls.Add(this.tbp);
             this.Name = "frmMantenimientos";
@@ -509,11 +522,12 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tlpUser.ResumeLayout(false);
             this.tlpUser.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tbpDelitos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelitos)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,7 +537,7 @@
 
         private System.Windows.Forms.TabControl tbp;
         private System.Windows.Forms.TabPage tbpNuevoUsuario;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tbpDelitos;
         private System.Windows.Forms.StatusStrip sstUser;
         private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -552,13 +566,14 @@
         private System.Windows.Forms.Button btnCacelar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.RichTextBox rtbDescripcionDelitos;
+        private System.Windows.Forms.TabPage tbpCentroPenales;
+        private System.Windows.Forms.TabPage tbpSalario;
+        private System.Windows.Forms.TabPage tbpEventos;
+        private System.Windows.Forms.TabPage tbpReclusos;
+        private System.Windows.Forms.DataGridView dgvDelitos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

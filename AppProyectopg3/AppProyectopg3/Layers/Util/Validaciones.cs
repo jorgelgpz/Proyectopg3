@@ -52,6 +52,20 @@ namespace UTN.Winform.AppProyectopg3.Layers.Util
             return Error;
         }
 
+        public bool CampoMuyLargo(string parametro)
+        {
+            this.LimpiaError();
+
+            if (parametro.Length > 49)
+            {
+                Error = true;
+                this.Descripcion = "Texto demasiado largo";
+            }
+
+            return Error;
+        }
+
+
 
         public string descripcion()
         {
