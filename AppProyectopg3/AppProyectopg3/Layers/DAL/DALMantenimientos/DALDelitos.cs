@@ -29,7 +29,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
             // Pasar parámetros
             command.Parameters.AddWithValue("@ID", consecutivo);
             command.Parameters.AddWithValue("@Descripcion", pDelitos.descripcion);
-          
+            command.Parameters.AddWithValue("@Estado", "true");
 
             command.CommandText = sql;
             command.CommandType = CommandType.StoredProcedure;
@@ -69,18 +69,21 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    Delitos oDelitos = new Delitos()
-
+                    if (dr["estado"].ToString().Trim().Equals("true"))
                     {
-                        Id = Convert.ToInt32(dr["ID"].ToString()),
-                        descripcion = dr["Descripcion"].ToString().Trim()
 
-                    };
+                        Delitos oDelitos = new Delitos()
+
+                        {
+                            Id = Convert.ToInt32(dr["ID"].ToString()),
+                            descripcion = dr["Descripcion"].ToString().Trim()
+
+                        };
 
 
 
-                    lista.Add(oDelitos);
-
+                        lista.Add(oDelitos);
+                    }
                 }
 
             }
@@ -88,6 +91,63 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
             return lista;
         }
         #endregion
+
+
+        #region ActualizaDelito
+        public void ActualizaDelito(Delitos pDelitos)
+        {
+
+
+            string sql = @"usp_UPDATE_Delitos";
+
+
+            SqlCommand command = new SqlCommand();
+
+            // Pasar parámetros
+            command.Parameters.AddWithValue("@ID", pDelitos.Id);
+            command.Parameters.AddWithValue("@Descripcion", pDelitos.descripcion);
+       
+
+            command.CommandText = sql;
+            command.CommandType = CommandType.StoredProcedure;
+
+
+            using (DataBase db = DatabaseFactory.CreateDataBase(FactoryConexion.CrearConexion()))
+            {
+                db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+            }
+
+        }
+        #endregion
+
+        #region EliminaLogicaMenteDelito
+        public void DeleteLogicalDelitos(Delitos pDelitos)
+        {
+
+
+            string sql = @"usp_DELETELOGICO_Delitos_ByID";
+
+
+            SqlCommand command = new SqlCommand();
+
+            // Pasar parámetros
+            command.Parameters.AddWithValue("@ID", pDelitos.Id);
+            command.Parameters.AddWithValue("@Estado", "false");
+
+
+            command.CommandText = sql;
+            command.CommandType = CommandType.StoredProcedure;
+
+
+            using (DataBase db = DatabaseFactory.CreateDataBase(FactoryConexion.CrearConexion()))
+            {
+                db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+            }
+
+        }
+        #endregion
+
+
 
 
 

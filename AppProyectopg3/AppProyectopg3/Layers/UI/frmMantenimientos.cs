@@ -53,6 +53,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
         }
 
+        #region carga los dgv de diferentes pestanas
+
         private void tbp_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -67,11 +69,17 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 if (tbpDelitos.Focus())
                 {
                     this.CargarDGVDelitos();
+                    this.btnBorrarDelito.Visible = false;
+                    this.btnEditarDelito.Visible = false;
+                    this.rtbDescripcionDelitos.Text = "";
                 }
 
                 if (tbpCentroPenales.Focus())
                 {
                     this.CargarDGVCentroPenales();
+                    this.LimpiaCampoCentroPenal();
+                    this.btnEditarCentroPenales.Visible = false;
+                    this.btnBorrarCentroPenal.Visible = false;
                 }
 
 
@@ -89,6 +97,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
         }
+        #endregion
 
         private void Cancelar()
         {
@@ -341,31 +350,48 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         #endregion
 
 
-
         #region pestana Delitos
+
+        #region carga lista de delitos
+
         private void CargarDGVDelitos()
         {
 
             dgvDelitos.DataSource = GestorMantenimientos.GetInstacia().GetListaDelitos();
 
         }
+        #endregion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
 
-            if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo500(this.rtbDescripcionDelitos.Text))
+            try
             {
-                errorProvider1.SetError(this.rtbDescripcionDelitos, Validaciones.GetInstancia().descripcion());
-                return;
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo500(this.rtbDescripcionDelitos.Text))
+                {
+                    errorProvider1.SetError(this.rtbDescripcionDelitos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                Delitos oDelitos = new Delitos();
+                oDelitos.descripcion = this.rtbDescripcionDelitos.Text;
+
+                GestorMantenimientos.GetInstacia().InsertNewDelito(oDelitos);
+                this.CargarDGVDelitos();
+                this.rtbDescripcionDelitos.Text = "";
+
             }
+            catch (Exception er)
+            {
 
-            Delitos oDelitos = new Delitos();
-            oDelitos.descripcion = this.rtbDescripcionDelitos.Text;
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
 
-            GestorMantenimientos.GetInstacia().InsertNewDelito(oDelitos);
-            this.CargarDGVDelitos();
-            this.rtbDescripcionDelitos.Text = "";
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCacelar_Click(object sender, EventArgs e)
@@ -375,14 +401,168 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         }
 
 
+        #region actualiza delito
+        private void btnEditarDelito_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProvider1.Clear();
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.rtbDescripcionDelitos.Text) || Validaciones.GetInstancia().CampoMuyLargo500(this.rtbDescripcionDelitos.Text))
+                {
+                    errorProvider1.SetError(this.rtbDescripcionDelitos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                x = this.dgvDelitos.SelectedCells[0].RowIndex;
+
+                Delitos oDelitos = new Delitos();
+                oDelitos = this.dgvDelitos.Rows[x].DataBoundItem as Delitos;
+
+                oDelitos.descripcion = this.rtbDescripcionDelitos.Text;
+
+                GestorMantenimientos.GetInstacia().ActualizaDelitos(oDelitos);
+                this.CargarDGVDelitos();
+
+                MessageBox.Show("Se ha actualizado los datos");
+                this.rtbDescripcionDelitos.Text = "";
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         #endregion
 
+
+        private void btnBorrarDelito_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+
+                if (MessageBox.Show("Esta seguro que desea borrar este delito?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    x = this.dgvDelitos.SelectedCells[0].RowIndex;
+
+                    Delitos oDelitos = new Delitos();
+                    oDelitos = this.dgvDelitos.Rows[x].DataBoundItem as Delitos;
+
+                    GestorMantenimientos.GetInstacia().DeleteLogicalDelitos(oDelitos);
+                    this.CargarDGVDelitos();
+
+                    MessageBox.Show("Se ha eliminado los datos");
+                    this.rtbDescripcionDelitos.Text = "";
+
+                }
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        #region seleccion del objeto dvg delito
+        private void dgvDelitos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                Delitos oDelitos = new Delitos();
+
+
+                if (e.RowIndex >= 0 && this.dgvDelitos.SelectedRows.Count > 0)
+                {
+
+                    if (e.RowIndex >= 0)
+                    {
+
+                        oDelitos = this.dgvDelitos.SelectedRows[0].DataBoundItem as Delitos;
+
+                        this.rtbDescripcionDelitos.Text = oDelitos.descripcion;
+
+                        this.btnEditarDelito.Visible = true;
+                        this.btnBorrarDelito.Visible = true;
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        #endregion
+
+        private void dgvDelitos_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                x = this.dgvDelitos.SelectedCells[0].RowIndex;
+                Delitos oDelitos = new Delitos();
+
+                oDelitos = this.dgvDelitos.Rows[x].DataBoundItem as Delitos;
+
+                this.rtbDescripcionDelitos.Text = oDelitos.descripcion;
+                this.btnBorrarDelito.Visible = true;
+                this.btnEditarDelito.Visible = true;
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
+
+
+        #region pestana centro penales
+
+        #region carga lista de centro penales
 
         private void CargarDGVCentroPenales()
         {
             dgvCentroPenales.DataSource = GestorMantenimientos.GetInstacia().GetListaPenales();
 
         }
+        #endregion
 
         private void btnAceptarCentroPenales_Click(object sender, EventArgs e)
         {
@@ -415,11 +595,13 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                     return;
                 }
 
-                if (Validaciones.GetInstancia().CampoNumerico(this.txtTelefono2CentroPenales.Text))
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono2CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono2CentroPenales.Text))
                 {
 
                     this.errorProvider1.SetError(this.txtTelefono2CentroPenales, Validaciones.GetInstancia().descripcion());
                     return;
+
                 }
 
                 #endregion
@@ -430,6 +612,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 oCentroPenales.Direccion = this.txtDireccionCentroPenales.Text.Trim();
                 oCentroPenales.Telefono1 = Convert.ToInt32(this.txtTelefono1CentroPenales.Text.Trim());
                 oCentroPenales.Telefono2 = Convert.ToInt32(this.txtTelefono2CentroPenales.Text.Trim());
+
 
                 GestorMantenimientos.GetInstacia().InsertNewCentroPenales(oCentroPenales);
 
@@ -457,11 +640,12 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
 
-
         private void btnCancelarCentroPenales_Click(object sender, EventArgs e)
         {
             this.Cancelar();
         }
+
+        #region seleccion el objeto del dgv de centro penales
 
         private void dgvCentroPenales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -499,9 +683,9 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
         }
+        #endregion
 
-
-
+        #region centro penales con la tecla enter
         private void dgvCentroPenales_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -527,6 +711,9 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
         }
+        #endregion
+
+        #region actualiza las celdas de centro penales
 
         private void ActualizaCentroPenalDesdeCelda()
         {
@@ -554,16 +741,31 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
         }
+        #endregion
 
+        #region limpia campos txt de centro penales
 
+        private void LimpiaCampoCentroPenal()
+        {
+
+            this.txtNombreCentroPenales.Text = "";
+            this.txtDireccionCentroPenales.Text = "";
+            this.txtTelefono1CentroPenales.Text = "";
+            this.txtTelefono2CentroPenales.Text = "";
+
+        }
+        #endregion
+
+        #region actualiza la fila del dgv centro penal cuando cambia de foco
 
         private void dgvCentroPenales_CurrentCellChanged(object sender, EventArgs e)
         {
             try
             {
-
-                ActualizaCentroPenalDesdeCelda();
-
+                if (dgvCentroPenales.Focused)
+                {
+                    ActualizaCentroPenalDesdeCelda();
+                }
             }
             catch (Exception er)
             {
@@ -575,13 +777,17 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
+        #region seleccion una fila del dgv de centro penales con un click
         private void dgvCentroPenales_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
                 x = this.dgvCentroPenales.SelectedCells[0].RowIndex;
                 ActualizaCentroPenalDesdeCelda();
+                this.btnEditarCentroPenales.Visible = true;
+                this.btnBorrarCentroPenal.Visible = true;
             }
             catch (Exception er)
             {
@@ -594,6 +800,94 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
         }
+
+        #endregion
+
+        #region actualiza centro penales
+        private void btnEditarCentroPenales_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                CentroPenales oCentroPenales = new CentroPenales();
+
+                oCentroPenales = this.dgvCentroPenales.Rows[x].DataBoundItem as CentroPenales;
+
+                this.txtNombreCentroPenales.Text = oCentroPenales.Nombre.ToString();
+                this.txtDireccionCentroPenales.Text = oCentroPenales.Direccion.ToString();
+                this.txtTelefono1CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono1.ToString());
+                this.txtTelefono2CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono2.ToString());
+
+                GestorMantenimientos.GetInstacia().ActualizaCentroPenales(oCentroPenales);
+                this.CargarDGVCentroPenales();
+                this.ActualizaCentroPenalDesdeCelda();
+
+                MessageBox.Show("Se ha modificado los campos");
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+        }
+        #endregion
+
+        #region Borrado logico centro penales
+        private void btnBorrarCentroPenal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (MessageBox.Show("Esta seguro que desea borrar este centro penal?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    CentroPenales oCentroPenales = new CentroPenales();
+
+                    oCentroPenales = this.dgvCentroPenales.Rows[x].DataBoundItem as CentroPenales;
+
+                    this.txtNombreCentroPenales.Text = oCentroPenales.Nombre.ToString();
+                    this.txtDireccionCentroPenales.Text = oCentroPenales.Direccion.ToString();
+                    this.txtTelefono1CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono1.ToString());
+                    this.txtTelefono2CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono2.ToString());
+
+
+                    GestorMantenimientos.GetInstacia().DeleteLogicalCentroPenales(oCentroPenales);
+                    this.CargarDGVCentroPenales();
+                    this.LimpiaCampoCentroPenal();
+                    x = 0;
+
+                    MessageBox.Show("Se ha eliminado el centro penal");
+
+                }
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        #endregion
+
+
+
+        #endregion
+
 
 
 

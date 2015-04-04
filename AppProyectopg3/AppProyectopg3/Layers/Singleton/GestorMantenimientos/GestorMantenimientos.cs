@@ -71,6 +71,23 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         }
         #endregion
 
+        #region Actualiza delito
+        public void ActualizaDelitos(Delitos pDelitos)
+        {
+            BLLDelitos oBLLDelitos = new BLLDelitos();
+            oBLLDelitos.ActualizaDelitos(pDelitos);
+        }
+
+        #endregion
+
+        #region delete logico delito
+        public void DeleteLogicalDelitos(Delitos pDelitos)
+        {
+            BLLDelitos oBLLDelitos = new BLLDelitos();
+            oBLLDelitos.DeleteLogicalDelitos(pDelitos);
+        } 
+        #endregion
+
         #region inserta un centro penal
         public void InsertNewCentroPenales(CentroPenales pCentroPenales)
         {

@@ -17,16 +17,23 @@ namespace UTN.Winform.AppProyectopg3.Layers.BLL.BLLMantenimientos
             oDALDelitos.InsertNewDelito(pDelitos);
         }
 
-
-
         public List<Delitos> GetListaDelitos()
         {
             DALDelitos oDALDelitos = new DALDelitos();
             return oDALDelitos.GetListaDelitos();
         }
 
+        public void ActualizaDelitos(Delitos pDelitos)
+        {
+            DALDelitos oDALDelitos = new DALDelitos();
+            oDALDelitos.ActualizaDelito(pDelitos);
+        }
 
-
+        public void DeleteLogicalDelitos(Delitos pDelitos)
+        {
+            DALDelitos oDALDelitos = new DALDelitos();
+            oDALDelitos.DeleteLogicalDelitos(pDelitos);
+        }
 
 
 

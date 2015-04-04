@@ -54,8 +54,6 @@
             this.txtPassV = new System.Windows.Forms.TextBox();
             this.tbpDelitos = new System.Windows.Forms.TabPage();
             this.dgvDelitos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCacelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -87,6 +85,12 @@
             this.sstUser = new System.Windows.Forms.StatusStrip();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEditarCentroPenales = new System.Windows.Forms.Button();
+            this.btnBorrarCentroPenal = new System.Windows.Forms.Button();
+            this.btnEditarDelito = new System.Windows.Forms.Button();
+            this.btnBorrarDelito = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -368,6 +372,8 @@
             // 
             // tbpDelitos
             // 
+            this.tbpDelitos.Controls.Add(this.btnBorrarDelito);
+            this.tbpDelitos.Controls.Add(this.btnEditarDelito);
             this.tbpDelitos.Controls.Add(this.dgvDelitos);
             this.tbpDelitos.Controls.Add(this.tableLayoutPanel3);
             this.tbpDelitos.Controls.Add(this.tableLayoutPanel1);
@@ -389,21 +395,8 @@
             this.dgvDelitos.Name = "dgvDelitos";
             this.dgvDelitos.Size = new System.Drawing.Size(793, 230);
             this.dgvDelitos.TabIndex = 3;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 48;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
+            this.dgvDelitos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDelitos_CellClick);
+            this.dgvDelitos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDelitos_MouseClick);
             // 
             // tableLayoutPanel3
             // 
@@ -472,6 +465,8 @@
             // 
             // tbpCentroPenales
             // 
+            this.tbpCentroPenales.Controls.Add(this.btnBorrarCentroPenal);
+            this.tbpCentroPenales.Controls.Add(this.btnEditarCentroPenales);
             this.tbpCentroPenales.Controls.Add(this.dgvCentroPenales);
             this.tbpCentroPenales.Controls.Add(this.tableLayoutPanel4);
             this.tbpCentroPenales.Controls.Add(this.tlpCentroPenales);
@@ -697,6 +692,69 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnEditarCentroPenales
+            // 
+            this.btnEditarCentroPenales.Location = new System.Drawing.Point(23, 183);
+            this.btnEditarCentroPenales.Name = "btnEditarCentroPenales";
+            this.btnEditarCentroPenales.Size = new System.Drawing.Size(100, 37);
+            this.btnEditarCentroPenales.TabIndex = 4;
+            this.btnEditarCentroPenales.Text = "Editar";
+            this.toolTip1.SetToolTip(this.btnEditarCentroPenales, "Salva la modificacion");
+            this.btnEditarCentroPenales.UseVisualStyleBackColor = true;
+            this.btnEditarCentroPenales.Visible = false;
+            this.btnEditarCentroPenales.Click += new System.EventHandler(this.btnEditarCentroPenales_Click);
+            // 
+            // btnBorrarCentroPenal
+            // 
+            this.btnBorrarCentroPenal.BackColor = System.Drawing.Color.Red;
+            this.btnBorrarCentroPenal.Location = new System.Drawing.Point(822, 35);
+            this.btnBorrarCentroPenal.Name = "btnBorrarCentroPenal";
+            this.btnBorrarCentroPenal.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrarCentroPenal.TabIndex = 5;
+            this.btnBorrarCentroPenal.Text = "Borrar";
+            this.btnBorrarCentroPenal.UseVisualStyleBackColor = false;
+            this.btnBorrarCentroPenal.Visible = false;
+            this.btnBorrarCentroPenal.Click += new System.EventHandler(this.btnBorrarCentroPenal_Click);
+            // 
+            // btnEditarDelito
+            // 
+            this.btnEditarDelito.Location = new System.Drawing.Point(22, 211);
+            this.btnEditarDelito.Name = "btnEditarDelito";
+            this.btnEditarDelito.Size = new System.Drawing.Size(100, 37);
+            this.btnEditarDelito.TabIndex = 5;
+            this.btnEditarDelito.Text = "Editar";
+            this.toolTip1.SetToolTip(this.btnEditarDelito, "Salva la modificacion");
+            this.btnEditarDelito.UseVisualStyleBackColor = true;
+            this.btnEditarDelito.Visible = false;
+            this.btnEditarDelito.Click += new System.EventHandler(this.btnEditarDelito_Click);
+            // 
+            // btnBorrarDelito
+            // 
+            this.btnBorrarDelito.BackColor = System.Drawing.Color.Red;
+            this.btnBorrarDelito.Location = new System.Drawing.Point(845, 37);
+            this.btnBorrarDelito.Name = "btnBorrarDelito";
+            this.btnBorrarDelito.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrarDelito.TabIndex = 6;
+            this.btnBorrarDelito.Text = "Borrar";
+            this.btnBorrarDelito.UseVisualStyleBackColor = false;
+            this.btnBorrarDelito.Visible = false;
+            this.btnBorrarDelito.Click += new System.EventHandler(this.btnBorrarDelito_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "Codigo";
+            this.ID.Name = "ID";
+            this.ID.Width = 70;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
             // frmMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -775,8 +833,6 @@
         private System.Windows.Forms.TabPage tbpEventos;
         private System.Windows.Forms.TabPage tbpReclusos;
         private System.Windows.Forms.DataGridView dgvDelitos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridView dgvCentroPenales;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnCancelarCentroPenales;
@@ -795,5 +851,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DireccionCentroPenales;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono1CentroPenales;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono2CentroPenales;
+        private System.Windows.Forms.Button btnEditarCentroPenales;
+        private System.Windows.Forms.Button btnBorrarCentroPenal;
+        private System.Windows.Forms.Button btnBorrarDelito;
+        private System.Windows.Forms.Button btnEditarDelito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

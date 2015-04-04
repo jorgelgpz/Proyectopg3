@@ -113,6 +113,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
             command.Parameters.AddWithValue("@Direccion", pCentroPenales.Direccion);
             command.Parameters.AddWithValue("@Telefono1", pCentroPenales.Telefono1);
             command.Parameters.AddWithValue("@Telefono2", pCentroPenales.Telefono2);
+            command.Parameters.AddWithValue("@Estado", "true");
 
             command.CommandText = sql;
             command.CommandType = CommandType.StoredProcedure;
@@ -131,7 +132,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
         {
 
 
-            string sql = @"usp_UPDATE_CentroPenales";
+            string sql = @"usp_DELETELOGICO_CentroPenales";
 
 
             SqlCommand command = new SqlCommand();
