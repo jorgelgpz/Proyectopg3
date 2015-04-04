@@ -24,7 +24,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
         private bool ValidacionesOK = false;
         private byte[] cadenaBytes;
-
+        private int x;
 
         public frmMantenimientos()
         {
@@ -33,27 +33,59 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
         private void frmMantenimientos_Load(object sender, EventArgs e)
         {
-            this.CargarDGV();
+            try
+            {
+
+                this.CargarDGV();
+
+            }
+
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
         private void tbp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tbpNuevoUsuario.Focus())
+            try
             {
-                this.CargarDGV();
-            }
 
-            if (tbpDelitos.Focus())
+
+                if (tbpNuevoUsuario.Focus())
+                {
+                    this.CargarDGV();
+                }
+
+                if (tbpDelitos.Focus())
+                {
+                    this.CargarDGVDelitos();
+                }
+
+                if (tbpCentroPenales.Focus())
+                {
+                    this.CargarDGVCentroPenales();
+                }
+
+
+
+            }
+            catch (Exception er)
             {
-                this.CargarDGVDelitos();
-            }
 
-            if (tbpCentroPenales.Focus())
-            {
-                this.CargarDGVCentroPenales();
-            }
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
 
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
@@ -83,9 +115,23 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         #region pobla el dgv con los usuarios
         private void CargarDGV()
         {
-            dgvUsuarios.RowTemplate.Height = 100;
+            try
+            {
 
-            dgvUsuarios.DataSource = GestorMantenimientos.GetInstacia().GetUsuarios();
+                dgvUsuarios.RowTemplate.Height = 100;
+
+                dgvUsuarios.DataSource = GestorMantenimientos.GetInstacia().GetUsuarios();
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -99,32 +145,46 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             if (ValidacionesOK && (this.txtPass.Text.Equals(this.txtPassV.Text)))
             {
 
-
-                Usuario oUsuario = Usuario.GetInstance();
-
-                if (rbAdministrador.Checked)
+                try
                 {
-                    oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.administrador);
+
+                    Usuario oUsuario = Usuario.GetInstance();
+
+                    if (rbAdministrador.Checked)
+                    {
+                        oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.administrador);
+                    }
+
+                    if (rbOperador.Checked)
+                    {
+                        oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.operador);
+                    }
+
+                    if (rbReportador.Checked)
+                    {
+                        oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.reportador);
+                    }
+
+                    oUsuario.NombreNew = this.txtUser.Text;
+                    oUsuario.ContrasenaNew = this.txtPass.Text;
+                    //oUsuario.Foto = cadenaBytes;
+                    oUsuario.Foto = (Byte[])Foto.Tag;
+
+                    GestorNewUser.GetInstacia().NewUser(oUsuario);
+                    this.CargarDGV();
+                    this.LimpiaCampos();
+
+                }
+                catch (Exception er)
+                {
+
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendFormat("Message        {0}\n", er.Message);
+                    msg.AppendFormat("Source         {0}\n", er.Source);
+
+                    MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                if (rbOperador.Checked)
-                {
-                    oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.operador);
-                }
-
-                if (rbReportador.Checked)
-                {
-                    oUsuario.RollNew = FactoriaUsuario.GetRoll(TipoUsuario.reportador);
-                }
-
-                oUsuario.NombreNew = this.txtUser.Text;
-                oUsuario.ContrasenaNew = this.txtPass.Text;
-                //oUsuario.Foto = cadenaBytes;
-                oUsuario.Foto = (Byte[])Foto.Tag;
-
-                GestorNewUser.GetInstacia().NewUser(oUsuario);
-                this.CargarDGV();
-                this.LimpiaCampos();
 
             }
             else
@@ -145,20 +205,34 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         #region limpia todos los campos
         private void LimpiaCampos()
         {
+            try
+            {
 
-            this.txtUser.Text = "";
-            this.txtPass.Text = "";
-            this.txtPassV.Text = "";
-            this.rbAdministrador.Checked = false;
-            this.rbOperador.Checked = false;
-            this.rbReportador.Checked = false;
-            this.pbFoto.Tag = null;
-            this.pbFoto.Image = global::UTN.Winform.AppProyectopg3.Properties.Resources.camera89;
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                this.txtUser.Text = "";
+                this.txtPass.Text = "";
+                this.txtPassV.Text = "";
+                this.rbAdministrador.Checked = false;
+                this.rbOperador.Checked = false;
+                this.rbReportador.Checked = false;
+                this.pbFoto.Tag = null;
+                this.pbFoto.Image = global::UTN.Winform.AppProyectopg3.Properties.Resources.camera89;
+                this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 
 
 
-            MessageBox.Show("El usuario ha sido agregado");
+                MessageBox.Show("El usuario ha sido agregado");
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         #endregion
@@ -307,58 +381,77 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         private void CargarDGVCentroPenales()
         {
             dgvCentroPenales.DataSource = GestorMantenimientos.GetInstacia().GetListaPenales();
+
         }
 
         private void btnAceptarCentroPenales_Click(object sender, EventArgs e)
         {
-            #region validaciones de campo de centro penales
-            this.errorProvider1.Clear();
 
-            if (Validaciones.GetInstancia().CampoRequerido(this.txtNombreCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtNombreCentroPenales.Text))
+
+            try
             {
 
-                this.errorProvider1.SetError(this.txtNombreCentroPenales, Validaciones.GetInstancia().descripcion());
-                return;
+                #region validaciones de campo de centro penales
+                this.errorProvider1.Clear();
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtNombreCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtNombreCentroPenales.Text))
+                {
+
+                    this.errorProvider1.SetError(this.txtNombreCentroPenales, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtDireccionCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtDireccionCentroPenales.Text))
+                {
+
+                    this.errorProvider1.SetError(this.txtDireccionCentroPenales, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono1CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono1CentroPenales.Text))
+                {
+
+                    this.errorProvider1.SetError(this.txtTelefono1CentroPenales, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoNumerico(this.txtTelefono2CentroPenales.Text))
+                {
+
+                    this.errorProvider1.SetError(this.txtTelefono2CentroPenales, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                #endregion
+
+                CentroPenales oCentroPenales = new CentroPenales();
+
+                oCentroPenales.Nombre = this.txtNombreCentroPenales.Text.Trim();
+                oCentroPenales.Direccion = this.txtDireccionCentroPenales.Text.Trim();
+                oCentroPenales.Telefono1 = Convert.ToInt32(this.txtTelefono1CentroPenales.Text.Trim());
+                oCentroPenales.Telefono2 = Convert.ToInt32(this.txtTelefono2CentroPenales.Text.Trim());
+
+                GestorMantenimientos.GetInstacia().InsertNewCentroPenales(oCentroPenales);
+
+                this.CargarDGVCentroPenales();
+
+                this.txtNombreCentroPenales.Text = "";
+                this.txtDireccionCentroPenales.Text = "";
+                this.txtTelefono1CentroPenales.Text = "";
+                this.txtTelefono2CentroPenales.Text = "";
+
             }
 
-            if (Validaciones.GetInstancia().CampoRequerido(this.txtDireccionCentroPenales.Text) || Validaciones.GetInstancia().CampoMuyLargo1000(this.txtDireccionCentroPenales.Text))
+            catch (Exception er)
             {
 
-                this.errorProvider1.SetError(this.txtDireccionCentroPenales, Validaciones.GetInstancia().descripcion());
-                return;
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono1CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono1CentroPenales.Text))
-            {
-
-                this.errorProvider1.SetError(this.txtTelefono1CentroPenales, Validaciones.GetInstancia().descripcion());
-                return;
-            }
-
-            if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefono2CentroPenales.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtTelefono2CentroPenales.Text))
-            {
-
-                this.errorProvider1.SetError(this.txtTelefono2CentroPenales, Validaciones.GetInstancia().descripcion());
-                return;
-            }
-            
-            #endregion
-
-            CentroPenales oCentroPenales = new CentroPenales();
-
-            oCentroPenales.Nombre = this.txtNombreCentroPenales.Text;
-            oCentroPenales.Direccion = this.txtDireccionCentroPenales.Text;
-            oCentroPenales.Telefono1 = Convert.ToInt32(this.txtTelefono1CentroPenales.Text);
-            oCentroPenales.Telefono2 = Convert.ToInt32(this.txtTelefono2CentroPenales.Text);
-
-            GestorMantenimientos.GetInstacia().InsertNewCentroPenales(oCentroPenales);
-
-            this.CargarDGVCentroPenales();
-
-            this.txtNombreCentroPenales.Text = "";
-            this.txtDireccionCentroPenales.Text = "";
-            this.txtTelefono1CentroPenales.Text = "";
-            this.txtTelefono2CentroPenales.Text = "";
 
         }
 
@@ -370,10 +463,154 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             this.Cancelar();
         }
 
+        private void dgvCentroPenales_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                CentroPenales oCentroPenales = new CentroPenales();
+
+                if (e.RowIndex >= 0 && this.dgvCentroPenales.SelectedRows.Count > 0)
+                {
+
+                    if (e.RowIndex >= 0)
+                    {
+
+                        oCentroPenales = this.dgvCentroPenales.SelectedRows[0].DataBoundItem as CentroPenales;
+
+                        this.txtNombreCentroPenales.Text = oCentroPenales.Nombre.ToString();
+                        this.txtDireccionCentroPenales.Text = oCentroPenales.Direccion.ToString();
+                        this.txtTelefono1CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono1.ToString());
+                        this.txtTelefono2CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono2.ToString());
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+
+
+        private void dgvCentroPenales_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+
+                if (e.KeyData == Keys.Enter)
+                {
+                    e.SuppressKeyPress = true;
+                    this.dgvCentroPenales.BeginEdit(true);
+                    x = this.dgvCentroPenales.SelectedCells[0].RowIndex;
+                    ActualizaCentroPenalDesdeCelda();
+
+                }
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void ActualizaCentroPenalDesdeCelda()
+        {
+            try
+            {
+
+                CentroPenales oCentroPenales = new CentroPenales();
+
+                oCentroPenales = this.dgvCentroPenales.Rows[x].DataBoundItem as CentroPenales;
+
+                this.txtNombreCentroPenales.Text = oCentroPenales.Nombre.ToString();
+                this.txtDireccionCentroPenales.Text = oCentroPenales.Direccion.ToString();
+                this.txtTelefono1CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono1.ToString());
+                this.txtTelefono2CentroPenales.Text = Convert.ToString(oCentroPenales.Telefono2.ToString());
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+
+
+        private void dgvCentroPenales_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ActualizaCentroPenalDesdeCelda();
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvCentroPenales_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                x = this.dgvCentroPenales.SelectedCells[0].RowIndex;
+                ActualizaCentroPenalDesdeCelda();
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
 
 
 
+
+        //try{
+
+        //    }
+        // catch (Exception er)
+        //    {
+
+        //        StringBuilder msg = new StringBuilder();
+        //        msg.AppendFormat("Message        {0}\n", er.Message);
+        //        msg.AppendFormat("Source         {0}\n", er.Source);
+
+        //        MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
 
 

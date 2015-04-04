@@ -63,30 +63,30 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.rtbDescripcionDelitos = new System.Windows.Forms.RichTextBox();
             this.tbpCentroPenales = new System.Windows.Forms.TabPage();
-            this.tbpSalario = new System.Windows.Forms.TabPage();
-            this.tbpEventos = new System.Windows.Forms.TabPage();
-            this.tbpReclusos = new System.Windows.Forms.TabPage();
-            this.sstUser = new System.Windows.Forms.StatusStrip();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.tlpCentroPenales = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblTelefono2 = new System.Windows.Forms.Label();
-            this.lblTelefono1 = new System.Windows.Forms.Label();
-            this.txtNombreCentroPenales = new System.Windows.Forms.TextBox();
-            this.txtDireccionCentroPenales = new System.Windows.Forms.TextBox();
-            this.txtTelefono1CentroPenales = new System.Windows.Forms.TextBox();
-            this.txtTelefono2CentroPenales = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAceptarCentroPenales = new System.Windows.Forms.Button();
-            this.btnCancelarCentroPenales = new System.Windows.Forms.Button();
             this.dgvCentroPenales = new System.Windows.Forms.DataGridView();
             this.NombreCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DireccionCentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono1CentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono2CentroPenales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelarCentroPenales = new System.Windows.Forms.Button();
+            this.btnAceptarCentroPenales = new System.Windows.Forms.Button();
+            this.tlpCentroPenales = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTelefono2CentroPenales = new System.Windows.Forms.TextBox();
+            this.txtTelefono1CentroPenales = new System.Windows.Forms.TextBox();
+            this.txtDireccionCentroPenales = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblTelefono2 = new System.Windows.Forms.Label();
+            this.lblTelefono1 = new System.Windows.Forms.Label();
+            this.txtNombreCentroPenales = new System.Windows.Forms.TextBox();
+            this.tbpSalario = new System.Windows.Forms.TabPage();
+            this.tbpEventos = new System.Windows.Forms.TabPage();
+            this.tbpReclusos = new System.Windows.Forms.TabPage();
+            this.sstUser = new System.Windows.Forms.StatusStrip();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -101,10 +101,10 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tbpCentroPenales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.tlpCentroPenales.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCentroPenales)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tlpCentroPenales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbp
@@ -483,6 +483,178 @@
             this.tbpCentroPenales.Text = "Centros Penales";
             this.tbpCentroPenales.UseVisualStyleBackColor = true;
             // 
+            // dgvCentroPenales
+            // 
+            this.dgvCentroPenales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCentroPenales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreCentroPenales,
+            this.IdCentroPenales,
+            this.DireccionCentroPenales,
+            this.Telefono1CentroPenales,
+            this.Telefono2CentroPenales});
+            this.dgvCentroPenales.Location = new System.Drawing.Point(23, 226);
+            this.dgvCentroPenales.Name = "dgvCentroPenales";
+            this.dgvCentroPenales.Size = new System.Drawing.Size(874, 276);
+            this.dgvCentroPenales.TabIndex = 3;
+            this.dgvCentroPenales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCentroPenales_CellClick);
+            this.dgvCentroPenales.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCentroPenales_CellMouseClick);
+            this.dgvCentroPenales.CurrentCellChanged += new System.EventHandler(this.dgvCentroPenales_CurrentCellChanged);
+            this.dgvCentroPenales.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCentroPenales_KeyDown);
+            // 
+            // NombreCentroPenales
+            // 
+            this.NombreCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreCentroPenales.DataPropertyName = "Nombre";
+            this.NombreCentroPenales.HeaderText = "Nombre";
+            this.NombreCentroPenales.Name = "NombreCentroPenales";
+            // 
+            // IdCentroPenales
+            // 
+            this.IdCentroPenales.DataPropertyName = "id";
+            this.IdCentroPenales.HeaderText = "ID";
+            this.IdCentroPenales.Name = "IdCentroPenales";
+            this.IdCentroPenales.Visible = false;
+            // 
+            // DireccionCentroPenales
+            // 
+            this.DireccionCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DireccionCentroPenales.DataPropertyName = "Direccion";
+            this.DireccionCentroPenales.HeaderText = "Direccion";
+            this.DireccionCentroPenales.Name = "DireccionCentroPenales";
+            // 
+            // Telefono1CentroPenales
+            // 
+            this.Telefono1CentroPenales.DataPropertyName = "Telefono1";
+            this.Telefono1CentroPenales.HeaderText = "Telefono";
+            this.Telefono1CentroPenales.Name = "Telefono1CentroPenales";
+            // 
+            // Telefono2CentroPenales
+            // 
+            this.Telefono2CentroPenales.DataPropertyName = "Telefono2";
+            this.Telefono2CentroPenales.HeaderText = "Telefono";
+            this.Telefono2CentroPenales.Name = "Telefono2CentroPenales";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.btnCancelarCentroPenales, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnAceptarCentroPenales, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(340, 141);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(425, 54);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // btnCancelarCentroPenales
+            // 
+            this.btnCancelarCentroPenales.Location = new System.Drawing.Point(215, 3);
+            this.btnCancelarCentroPenales.Name = "btnCancelarCentroPenales";
+            this.btnCancelarCentroPenales.Size = new System.Drawing.Size(118, 38);
+            this.btnCancelarCentroPenales.TabIndex = 1;
+            this.btnCancelarCentroPenales.Text = "Cancelar";
+            this.btnCancelarCentroPenales.UseVisualStyleBackColor = true;
+            this.btnCancelarCentroPenales.Click += new System.EventHandler(this.btnCancelarCentroPenales_Click);
+            // 
+            // btnAceptarCentroPenales
+            // 
+            this.btnAceptarCentroPenales.Location = new System.Drawing.Point(3, 3);
+            this.btnAceptarCentroPenales.Name = "btnAceptarCentroPenales";
+            this.btnAceptarCentroPenales.Size = new System.Drawing.Size(118, 38);
+            this.btnAceptarCentroPenales.TabIndex = 0;
+            this.btnAceptarCentroPenales.Text = "Aceptar";
+            this.btnAceptarCentroPenales.UseVisualStyleBackColor = true;
+            this.btnAceptarCentroPenales.Click += new System.EventHandler(this.btnAceptarCentroPenales_Click);
+            // 
+            // tlpCentroPenales
+            // 
+            this.tlpCentroPenales.ColumnCount = 2;
+            this.tlpCentroPenales.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.03773F));
+            this.tlpCentroPenales.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.96227F));
+            this.tlpCentroPenales.Controls.Add(this.txtTelefono2CentroPenales, 1, 3);
+            this.tlpCentroPenales.Controls.Add(this.txtTelefono1CentroPenales, 1, 2);
+            this.tlpCentroPenales.Controls.Add(this.txtDireccionCentroPenales, 1, 1);
+            this.tlpCentroPenales.Controls.Add(this.lblNombre, 0, 0);
+            this.tlpCentroPenales.Controls.Add(this.lblDireccion, 0, 1);
+            this.tlpCentroPenales.Controls.Add(this.lblTelefono2, 0, 3);
+            this.tlpCentroPenales.Controls.Add(this.lblTelefono1, 0, 2);
+            this.tlpCentroPenales.Controls.Add(this.txtNombreCentroPenales, 1, 0);
+            this.tlpCentroPenales.Location = new System.Drawing.Point(23, 35);
+            this.tlpCentroPenales.Name = "tlpCentroPenales";
+            this.tlpCentroPenales.RowCount = 4;
+            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpCentroPenales.Size = new System.Drawing.Size(742, 100);
+            this.tlpCentroPenales.TabIndex = 1;
+            // 
+            // txtTelefono2CentroPenales
+            // 
+            this.txtTelefono2CentroPenales.Location = new System.Drawing.Point(121, 78);
+            this.txtTelefono2CentroPenales.Name = "txtTelefono2CentroPenales";
+            this.txtTelefono2CentroPenales.Size = new System.Drawing.Size(166, 22);
+            this.txtTelefono2CentroPenales.TabIndex = 7;
+            // 
+            // txtTelefono1CentroPenales
+            // 
+            this.txtTelefono1CentroPenales.Location = new System.Drawing.Point(121, 53);
+            this.txtTelefono1CentroPenales.Name = "txtTelefono1CentroPenales";
+            this.txtTelefono1CentroPenales.Size = new System.Drawing.Size(166, 22);
+            this.txtTelefono1CentroPenales.TabIndex = 6;
+            // 
+            // txtDireccionCentroPenales
+            // 
+            this.txtDireccionCentroPenales.Location = new System.Drawing.Point(121, 28);
+            this.txtDireccionCentroPenales.Name = "txtDireccionCentroPenales";
+            this.txtDireccionCentroPenales.Size = new System.Drawing.Size(618, 22);
+            this.txtDireccionCentroPenales.TabIndex = 5;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(3, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 15);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(3, 25);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(64, 15);
+            this.lblDireccion.TabIndex = 1;
+            this.lblDireccion.Text = "Direccion";
+            // 
+            // lblTelefono2
+            // 
+            this.lblTelefono2.AutoSize = true;
+            this.lblTelefono2.Location = new System.Drawing.Point(3, 75);
+            this.lblTelefono2.Name = "lblTelefono2";
+            this.lblTelefono2.Size = new System.Drawing.Size(66, 15);
+            this.lblTelefono2.TabIndex = 2;
+            this.lblTelefono2.Text = "Telefono 2";
+            // 
+            // lblTelefono1
+            // 
+            this.lblTelefono1.AutoSize = true;
+            this.lblTelefono1.Location = new System.Drawing.Point(3, 50);
+            this.lblTelefono1.Name = "lblTelefono1";
+            this.lblTelefono1.Size = new System.Drawing.Size(65, 15);
+            this.lblTelefono1.TabIndex = 3;
+            this.lblTelefono1.Text = "Telefono 1";
+            // 
+            // txtNombreCentroPenales
+            // 
+            this.txtNombreCentroPenales.Location = new System.Drawing.Point(121, 3);
+            this.txtNombreCentroPenales.Name = "txtNombreCentroPenales";
+            this.txtNombreCentroPenales.Size = new System.Drawing.Size(317, 22);
+            this.txtNombreCentroPenales.TabIndex = 4;
+            // 
             // tbpSalario
             // 
             this.tbpSalario.Location = new System.Drawing.Point(4, 24);
@@ -525,174 +697,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(54, 15);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // tlpCentroPenales
-            // 
-            this.tlpCentroPenales.ColumnCount = 2;
-            this.tlpCentroPenales.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.03773F));
-            this.tlpCentroPenales.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.96227F));
-            this.tlpCentroPenales.Controls.Add(this.txtTelefono2CentroPenales, 1, 3);
-            this.tlpCentroPenales.Controls.Add(this.txtTelefono1CentroPenales, 1, 2);
-            this.tlpCentroPenales.Controls.Add(this.txtDireccionCentroPenales, 1, 1);
-            this.tlpCentroPenales.Controls.Add(this.lblNombre, 0, 0);
-            this.tlpCentroPenales.Controls.Add(this.lblDireccion, 0, 1);
-            this.tlpCentroPenales.Controls.Add(this.lblTelefono2, 0, 3);
-            this.tlpCentroPenales.Controls.Add(this.lblTelefono1, 0, 2);
-            this.tlpCentroPenales.Controls.Add(this.txtNombreCentroPenales, 1, 0);
-            this.tlpCentroPenales.Location = new System.Drawing.Point(23, 35);
-            this.tlpCentroPenales.Name = "tlpCentroPenales";
-            this.tlpCentroPenales.RowCount = 4;
-            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCentroPenales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCentroPenales.Size = new System.Drawing.Size(742, 100);
-            this.tlpCentroPenales.TabIndex = 1;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(3, 25);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(64, 15);
-            this.lblDireccion.TabIndex = 1;
-            this.lblDireccion.Text = "Direccion";
-            // 
-            // lblTelefono2
-            // 
-            this.lblTelefono2.AutoSize = true;
-            this.lblTelefono2.Location = new System.Drawing.Point(3, 75);
-            this.lblTelefono2.Name = "lblTelefono2";
-            this.lblTelefono2.Size = new System.Drawing.Size(66, 15);
-            this.lblTelefono2.TabIndex = 2;
-            this.lblTelefono2.Text = "Telefono 2";
-            // 
-            // lblTelefono1
-            // 
-            this.lblTelefono1.AutoSize = true;
-            this.lblTelefono1.Location = new System.Drawing.Point(3, 50);
-            this.lblTelefono1.Name = "lblTelefono1";
-            this.lblTelefono1.Size = new System.Drawing.Size(65, 15);
-            this.lblTelefono1.TabIndex = 3;
-            this.lblTelefono1.Text = "Telefono 1";
-            // 
-            // txtNombreCentroPenales
-            // 
-            this.txtNombreCentroPenales.Location = new System.Drawing.Point(121, 3);
-            this.txtNombreCentroPenales.Name = "txtNombreCentroPenales";
-            this.txtNombreCentroPenales.Size = new System.Drawing.Size(317, 22);
-            this.txtNombreCentroPenales.TabIndex = 4;
-            // 
-            // txtDireccionCentroPenales
-            // 
-            this.txtDireccionCentroPenales.Location = new System.Drawing.Point(121, 28);
-            this.txtDireccionCentroPenales.Name = "txtDireccionCentroPenales";
-            this.txtDireccionCentroPenales.Size = new System.Drawing.Size(618, 22);
-            this.txtDireccionCentroPenales.TabIndex = 5;
-            // 
-            // txtTelefono1CentroPenales
-            // 
-            this.txtTelefono1CentroPenales.Location = new System.Drawing.Point(121, 53);
-            this.txtTelefono1CentroPenales.Name = "txtTelefono1CentroPenales";
-            this.txtTelefono1CentroPenales.Size = new System.Drawing.Size(166, 22);
-            this.txtTelefono1CentroPenales.TabIndex = 6;
-            // 
-            // txtTelefono2CentroPenales
-            // 
-            this.txtTelefono2CentroPenales.Location = new System.Drawing.Point(121, 78);
-            this.txtTelefono2CentroPenales.Name = "txtTelefono2CentroPenales";
-            this.txtTelefono2CentroPenales.Size = new System.Drawing.Size(166, 22);
-            this.txtTelefono2CentroPenales.TabIndex = 7;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.btnCancelarCentroPenales, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnAceptarCentroPenales, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(340, 141);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(425, 54);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // btnAceptarCentroPenales
-            // 
-            this.btnAceptarCentroPenales.Location = new System.Drawing.Point(3, 3);
-            this.btnAceptarCentroPenales.Name = "btnAceptarCentroPenales";
-            this.btnAceptarCentroPenales.Size = new System.Drawing.Size(118, 38);
-            this.btnAceptarCentroPenales.TabIndex = 0;
-            this.btnAceptarCentroPenales.Text = "Aceptar";
-            this.btnAceptarCentroPenales.UseVisualStyleBackColor = true;
-            this.btnAceptarCentroPenales.Click += new System.EventHandler(this.btnAceptarCentroPenales_Click);
-            // 
-            // btnCancelarCentroPenales
-            // 
-            this.btnCancelarCentroPenales.Location = new System.Drawing.Point(215, 3);
-            this.btnCancelarCentroPenales.Name = "btnCancelarCentroPenales";
-            this.btnCancelarCentroPenales.Size = new System.Drawing.Size(118, 38);
-            this.btnCancelarCentroPenales.TabIndex = 1;
-            this.btnCancelarCentroPenales.Text = "Cancelar";
-            this.btnCancelarCentroPenales.UseVisualStyleBackColor = true;
-            this.btnCancelarCentroPenales.Click += new System.EventHandler(this.btnCancelarCentroPenales_Click);
-            // 
-            // dgvCentroPenales
-            // 
-            this.dgvCentroPenales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCentroPenales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreCentroPenales,
-            this.IdCentroPenales,
-            this.DireccionCentroPenales,
-            this.Telefono1CentroPenales,
-            this.Telefono2CentroPenales});
-            this.dgvCentroPenales.Location = new System.Drawing.Point(23, 226);
-            this.dgvCentroPenales.Name = "dgvCentroPenales";
-            this.dgvCentroPenales.Size = new System.Drawing.Size(874, 276);
-            this.dgvCentroPenales.TabIndex = 3;
-            // 
-            // NombreCentroPenales
-            // 
-            this.NombreCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NombreCentroPenales.DataPropertyName = "Nombre";
-            this.NombreCentroPenales.HeaderText = "Nombre";
-            this.NombreCentroPenales.Name = "NombreCentroPenales";
-            // 
-            // IdCentroPenales
-            // 
-            this.IdCentroPenales.DataPropertyName = "id";
-            this.IdCentroPenales.HeaderText = "ID";
-            this.IdCentroPenales.Name = "IdCentroPenales";
-            this.IdCentroPenales.Visible = false;
-            // 
-            // DireccionCentroPenales
-            // 
-            this.DireccionCentroPenales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DireccionCentroPenales.DataPropertyName = "Direccion";
-            this.DireccionCentroPenales.HeaderText = "Direccion";
-            this.DireccionCentroPenales.Name = "DireccionCentroPenales";
-            // 
-            // Telefono1CentroPenales
-            // 
-            this.Telefono1CentroPenales.DataPropertyName = "Telefono1";
-            this.Telefono1CentroPenales.HeaderText = "Telefono";
-            this.Telefono1CentroPenales.Name = "Telefono1CentroPenales";
-            // 
-            // Telefono2CentroPenales
-            // 
-            this.Telefono2CentroPenales.DataPropertyName = "Telefono2";
-            this.Telefono2CentroPenales.HeaderText = "Telefono";
-            this.Telefono2CentroPenales.Name = "Telefono2CentroPenales";
-            // 
             // frmMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,11 +725,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tbpCentroPenales.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCentroPenales)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.tlpCentroPenales.ResumeLayout(false);
             this.tlpCentroPenales.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCentroPenales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
