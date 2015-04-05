@@ -85,7 +85,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLDelitos oBLLDelitos = new BLLDelitos();
             oBLLDelitos.DeleteLogicalDelitos(pDelitos);
-        } 
+        }
         #endregion
 
         #region inserta un centro penal
@@ -111,7 +111,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
             oBLLCentroPenales.ActualizaCentroPenales(pCentroPenales);
-        } 
+        }
         #endregion
 
         #region delete logico de centro penales
@@ -119,11 +119,42 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
         {
             BLLCentroPenales oBLLCentroPenales = new BLLCentroPenales();
             oBLLCentroPenales.DeleteLogicalCentroPenales(pCentroPenales);
+        }
+        #endregion
+
+        #region inserta un nuevo salario base
+        public void InsertNewSalarioBase(SalarioBase pSalarioBase)
+        {
+
+            BLLSalarioBase oBLLSalarioBase = new BLLSalarioBase();
+            oBLLSalarioBase.InsertNewSalarioBase(pSalarioBase);
         } 
         #endregion
 
+        #region Get lista salario Base
+        public List<SalarioBase> GetListaSalarioBase()
+        {
+            BLLSalarioBase oBLLSalarioBase = new BLLSalarioBase();
+            return oBLLSalarioBase.GetListaSalarioBase();
+        } 
+        #endregion
 
+        #region actualiza salario base
+        public void ActualizaSalarioBase(SalarioBase pSalarioBase)
+        {
+            BLLSalarioBase oBLLSalarioBase = new BLLSalarioBase();
+            oBLLSalarioBase.ActualizaSalarioBase(pSalarioBase);
+        } 
+        #endregion
 
+        #region delete logico salario base
+        public void DeleteLogicalSalarioBase(SalarioBase pSalarioBase)
+        {
+            BLLSalarioBase oBLLSalarioBase = new BLLSalarioBase();
+            oBLLSalarioBase.DeleteLogicalSalarioBase(pSalarioBase);
+        }
+
+        #endregion
 
 
 

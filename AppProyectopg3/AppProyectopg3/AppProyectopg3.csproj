@@ -50,6 +50,7 @@
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitosReclusos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLMantenimientos.cs" />
+    <Compile Include="Layers\BLL\BLLMantenimientos\BLLSalarioBase.cs" />
     <Compile Include="Layers\BLL\BLLNewUser.cs" />
     <Compile Include="Layers\DAL\DALConsecutivos.cs" />
     <Compile Include="Layers\DAL\DALLNewUser.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Layers\Entities\DTO\DelitosReclusos.cs" />
     <Compile Include="Layers\Entities\DTO\Users.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaUsuario.cs" />
+    <Compile Include="Layers\Entities\SalarioBase.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
     <Compile Include="Layers\Enumeraciones\TipoUsuario.cs" />
     <Compile Include="Layers\Interfaces\IUser.cs" />

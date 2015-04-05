@@ -100,6 +100,28 @@ namespace UTN.Winform.AppProyectopg3.Layers.Util
 
         }
 
+        public bool CampoNumericoDouble(string parametro)
+        {
+            this.LimpiaError();
+
+            try
+            {
+
+                double.Parse(parametro);
+
+            }
+            catch
+            {
+
+                Error = true;
+                this.Descripcion = "El formato de entrada debe ser numerico";
+            }
+
+
+            return Error;
+
+        }
+
 
         public string descripcion()
         {

@@ -91,6 +91,17 @@
             this.btnBorrarDelito = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAgregarSalario = new System.Windows.Forms.Button();
+            this.btnCancelarSalario = new System.Windows.Forms.Button();
+            this.btnEditarSalario = new System.Windows.Forms.Button();
+            this.btnBorrarSalario = new System.Windows.Forms.Button();
+            this.dgvSalarioBase = new System.Windows.Forms.DataGridView();
+            this.IDSALARIOBASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MONTOSALARIOBASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -108,7 +119,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCentroPenales)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tlpCentroPenales.SuspendLayout();
+            this.tbpSalario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalarioBase)).BeginInit();
             this.SuspendLayout();
             // 
             // tbp
@@ -652,6 +667,9 @@
             // 
             // tbpSalario
             // 
+            this.tbpSalario.Controls.Add(this.dgvSalarioBase);
+            this.tbpSalario.Controls.Add(this.tableLayoutPanel6);
+            this.tbpSalario.Controls.Add(this.tableLayoutPanel5);
             this.tbpSalario.Location = new System.Drawing.Point(4, 24);
             this.tbpSalario.Name = "tbpSalario";
             this.tbpSalario.Padding = new System.Windows.Forms.Padding(3);
@@ -755,6 +773,123 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.03226F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.96774F));
+            this.tableLayoutPanel5.Controls.Add(this.lblSalario, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtSalario, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(22, 35);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(310, 38);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Location = new System.Drawing.Point(3, 0);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(47, 15);
+            this.lblSalario.TabIndex = 0;
+            this.lblSalario.Text = "Salario";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(93, 3);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(169, 22);
+            this.txtSalario.TabIndex = 1;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.Controls.Add(this.btnBorrarSalario, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnEditarSalario, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnCancelarSalario, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnAgregarSalario, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(22, 101);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(510, 55);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // btnAgregarSalario
+            // 
+            this.btnAgregarSalario.Location = new System.Drawing.Point(3, 3);
+            this.btnAgregarSalario.Name = "btnAgregarSalario";
+            this.btnAgregarSalario.Size = new System.Drawing.Size(101, 38);
+            this.btnAgregarSalario.TabIndex = 0;
+            this.btnAgregarSalario.Text = "Agregar";
+            this.btnAgregarSalario.UseVisualStyleBackColor = true;
+            this.btnAgregarSalario.Click += new System.EventHandler(this.btnAgregarSalario_Click);
+            // 
+            // btnCancelarSalario
+            // 
+            this.btnCancelarSalario.Location = new System.Drawing.Point(130, 3);
+            this.btnCancelarSalario.Name = "btnCancelarSalario";
+            this.btnCancelarSalario.Size = new System.Drawing.Size(101, 38);
+            this.btnCancelarSalario.TabIndex = 1;
+            this.btnCancelarSalario.Text = "Cancelar";
+            this.btnCancelarSalario.UseVisualStyleBackColor = true;
+            this.btnCancelarSalario.Click += new System.EventHandler(this.btnCancelarSalario_Click);
+            // 
+            // btnEditarSalario
+            // 
+            this.btnEditarSalario.Location = new System.Drawing.Point(257, 3);
+            this.btnEditarSalario.Name = "btnEditarSalario";
+            this.btnEditarSalario.Size = new System.Drawing.Size(101, 38);
+            this.btnEditarSalario.TabIndex = 2;
+            this.btnEditarSalario.Text = "Editar";
+            this.btnEditarSalario.UseVisualStyleBackColor = true;
+            this.btnEditarSalario.Visible = false;
+            this.btnEditarSalario.Click += new System.EventHandler(this.btnEditarSalario_Click);
+            // 
+            // btnBorrarSalario
+            // 
+            this.btnBorrarSalario.Location = new System.Drawing.Point(384, 3);
+            this.btnBorrarSalario.Name = "btnBorrarSalario";
+            this.btnBorrarSalario.Size = new System.Drawing.Size(101, 38);
+            this.btnBorrarSalario.TabIndex = 3;
+            this.btnBorrarSalario.Text = "Borrar";
+            this.btnBorrarSalario.UseVisualStyleBackColor = true;
+            this.btnBorrarSalario.Visible = false;
+            this.btnBorrarSalario.Click += new System.EventHandler(this.btnBorrarSalario_Click);
+            // 
+            // dgvSalarioBase
+            // 
+            this.dgvSalarioBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalarioBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDSALARIOBASE,
+            this.MONTOSALARIOBASE});
+            this.dgvSalarioBase.Location = new System.Drawing.Point(22, 196);
+            this.dgvSalarioBase.Name = "dgvSalarioBase";
+            this.dgvSalarioBase.Size = new System.Drawing.Size(262, 308);
+            this.dgvSalarioBase.TabIndex = 2;
+            this.dgvSalarioBase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarioBase_CellClick);
+            this.dgvSalarioBase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvSalarioBase_MouseClick);
+            // 
+            // IDSALARIOBASE
+            // 
+            this.IDSALARIOBASE.DataPropertyName = "ID";
+            this.IDSALARIOBASE.HeaderText = "ID";
+            this.IDSALARIOBASE.Name = "IDSALARIOBASE";
+            this.IDSALARIOBASE.Visible = false;
+            // 
+            // MONTOSALARIOBASE
+            // 
+            this.MONTOSALARIOBASE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MONTOSALARIOBASE.DataPropertyName = "Monto";
+            this.MONTOSALARIOBASE.HeaderText = "MONTO";
+            this.MONTOSALARIOBASE.Name = "MONTOSALARIOBASE";
+            // 
             // frmMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,7 +922,12 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tlpCentroPenales.ResumeLayout(false);
             this.tlpCentroPenales.PerformLayout();
+            this.tbpSalario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalarioBase)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -857,5 +997,16 @@
         private System.Windows.Forms.Button btnEditarDelito;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridView dgvSalarioBase;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button btnBorrarSalario;
+        private System.Windows.Forms.Button btnEditarSalario;
+        private System.Windows.Forms.Button btnCancelarSalario;
+        private System.Windows.Forms.Button btnAgregarSalario;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDSALARIOBASE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MONTOSALARIOBASE;
     }
 }

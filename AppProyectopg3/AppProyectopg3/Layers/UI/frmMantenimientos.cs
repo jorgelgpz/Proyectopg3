@@ -53,6 +53,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
         }
 
+
+
         #region carga los dgv de diferentes pestanas
 
         private void tbp_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +84,14 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                     this.btnBorrarCentroPenal.Visible = false;
                 }
 
+                if (tbpSalario.Focus())
+                {
+                    this.CargarDGVSalarioBase();
+                    this.LimpiaCamposSalarioBase();
+                    this.btnEditarSalario.Visible = false;
+                    this.btnBorrarSalario.Visible = false;
+
+                }
 
 
             }
@@ -547,9 +557,6 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
 
-
-
-
         #endregion
 
 
@@ -887,6 +894,218 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
 
         #endregion
+
+
+
+
+        #region pestana salario base
+
+        #region carga lista de Salario base
+
+        private void CargarDGVSalarioBase()
+        {
+            this.dgvSalarioBase.DataSource = GestorMantenimientos.GetInstacia().GetListaSalarioBase();
+
+        }
+        #endregion
+
+        private void LimpiaCamposSalarioBase()
+        {
+
+            this.txtSalario.Text = "";
+        }
+
+        private void ActualizaCampoSalarioBase()
+        {
+
+            SalarioBase oSalarioBase = new SalarioBase();
+
+            x = this.dgvSalarioBase.SelectedCells[0].RowIndex;
+
+            oSalarioBase = this.dgvSalarioBase.Rows[0].DataBoundItem as SalarioBase;
+
+            this.txtSalario.Text = Convert.ToString(oSalarioBase.Monto);
+        }
+
+        private SalarioBase ActualizaSalarioBase()
+        {
+
+            SalarioBase oSalarioBase = new SalarioBase();
+
+            x = this.dgvSalarioBase.SelectedCells[0].RowIndex;
+
+            oSalarioBase = this.dgvSalarioBase.Rows[x].DataBoundItem as SalarioBase;
+
+            this.txtSalario.Text = Convert.ToString(oSalarioBase.Monto);
+
+            return oSalarioBase;
+        }
+
+        private void btnAgregarSalario_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                errorProvider1.Clear();
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtSalario.Text) || Validaciones.GetInstancia().CampoNumericoDouble(this.txtSalario.Text))
+                {
+                    errorProvider1.SetError(this.txtSalario, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                SalarioBase oSalarioBase = new SalarioBase();
+                oSalarioBase.Monto = Convert.ToDouble(this.txtSalario.Text);
+
+                GestorMantenimientos.GetInstacia().InsertNewSalarioBase(oSalarioBase);
+                this.CargarDGVSalarioBase();
+                this.LimpiaCamposSalarioBase();
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void btnCancelarSalario_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
+        }
+
+        private void btnEditarSalario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProvider1.Clear();
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtSalario.Text) || Validaciones.GetInstancia().CampoNumericoDouble(this.txtSalario.Text))
+                {
+                    errorProvider1.SetError(this.txtSalario, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                SalarioBase oSalarioBase = new SalarioBase();
+
+                x = this.dgvSalarioBase.SelectedCells[0].RowIndex;
+
+                oSalarioBase = this.dgvSalarioBase.Rows[x].DataBoundItem as SalarioBase;
+                oSalarioBase.Monto = Convert.ToDouble(this.txtSalario.Text);
+
+                GestorMantenimientos.GetInstacia().ActualizaSalarioBase(oSalarioBase);
+                this.CargarDGVSalarioBase();
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnBorrarSalario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (MessageBox.Show("Esta seguro que desea borrar este salario base?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    SalarioBase oSalarioBase = this.ActualizaSalarioBase();
+
+                    GestorMantenimientos.GetInstacia().DeleteLogicalSalarioBase(oSalarioBase);
+                    this.CargarDGVSalarioBase();
+
+                    MessageBox.Show("Se ha eliminado los datos");
+                    this.txtSalario.Text = "";
+
+                }
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvSalarioBase_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                SalarioBase oSalarioBase = new SalarioBase();
+
+
+                if (e.RowIndex >= 0 && this.dgvSalarioBase.SelectedRows.Count > 0)
+                {
+
+                    if (e.RowIndex >= 0)
+                    {
+
+                        oSalarioBase = this.dgvSalarioBase.SelectedRows[0].DataBoundItem as SalarioBase;
+
+                        this.txtSalario.Text = Convert.ToString(oSalarioBase.Monto);
+
+                        this.btnEditarSalario.Visible = true;
+                        this.btnBorrarSalario.Visible = true;
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvSalarioBase_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                this.ActualizaSalarioBase();
+                this.btnEditarSalario.Visible = true;
+                this.btnBorrarSalario.Visible = true;
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } 
+        #endregion
+
+
+
 
 
 
