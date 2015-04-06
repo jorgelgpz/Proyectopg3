@@ -1,0 +1,3 @@
+﻿
+
+enum TipoEventos { Positivo,Negativo}

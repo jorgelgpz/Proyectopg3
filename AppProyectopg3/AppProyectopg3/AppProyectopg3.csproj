@@ -49,6 +49,7 @@
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLCentroPenales.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLDelitosReclusos.cs" />
+    <Compile Include="Layers\BLL\BLLMantenimientos\BLLEventos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLMantenimientos.cs" />
     <Compile Include="Layers\BLL\BLLMantenimientos\BLLSalarioBase.cs" />
     <Compile Include="Layers\BLL\BLLNewUser.cs" />
@@ -69,9 +70,13 @@
     <Compile Include="Layers\Entities\Delitos.cs" />
     <Compile Include="Layers\Entities\DTO\DelitosReclusos.cs" />
     <Compile Include="Layers\Entities\DTO\Users.cs" />
+    <Compile Include="Layers\Entities\Eventos.cs" />
+    <Compile Include="Layers\Entities\Factories\FactoriaTipoEventos.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaUsuario.cs" />
     <Compile Include="Layers\Entities\SalarioBase.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
+    <Compile Include="Layers\Enumeraciones\TipoEventos.cs" />
+    <Compile Include="Layers\Enumeraciones\TipoSeccionCarcelaria.cs" />
     <Compile Include="Layers\Enumeraciones\TipoUsuario.cs" />
     <Compile Include="Layers\Interfaces\IUser.cs" />
     <Compile Include="Layers\Persistencia\DataBase.cs" />

@@ -93,6 +93,18 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 }
 
+                if (tbpEventos.Focus())
+                {
+
+                    this.CargaDGVEventos();
+                    this.LimpiaEvento();
+                    this.btnEditarEvento.Visible = false;
+                    this.btnBorrarEvento.Visible = false;
+                    this.rbPositvoEvento.Checked = false;
+                    this.rbNegativoEvento.Checked = false;
+
+                }
+
 
             }
             catch (Exception er)
@@ -534,14 +546,18 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         {
             try
             {
-                x = this.dgvDelitos.SelectedCells[0].RowIndex;
-                Delitos oDelitos = new Delitos();
+                if (this.dgvDelitos.RowCount > 0)
+                {
 
-                oDelitos = this.dgvDelitos.Rows[x].DataBoundItem as Delitos;
+                    x = this.dgvDelitos.SelectedCells[0].RowIndex;
+                    Delitos oDelitos = new Delitos();
 
-                this.rtbDescripcionDelitos.Text = oDelitos.descripcion;
-                this.btnBorrarDelito.Visible = true;
-                this.btnEditarDelito.Visible = true;
+                    oDelitos = this.dgvDelitos.Rows[x].DataBoundItem as Delitos;
+
+                    this.rtbDescripcionDelitos.Text = oDelitos.descripcion;
+                    this.btnBorrarDelito.Visible = true;
+                    this.btnEditarDelito.Visible = true;
+                }
             }
             catch (Exception er)
             {
@@ -728,6 +744,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             {
 
                 CentroPenales oCentroPenales = new CentroPenales();
+                x = this.dgvCentroPenales.SelectedCells[0].RowIndex;
 
                 oCentroPenales = this.dgvCentroPenales.Rows[x].DataBoundItem as CentroPenales;
 
@@ -791,10 +808,13 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         {
             try
             {
-                x = this.dgvCentroPenales.SelectedCells[0].RowIndex;
-                ActualizaCentroPenalDesdeCelda();
-                this.btnEditarCentroPenales.Visible = true;
-                this.btnBorrarCentroPenal.Visible = true;
+
+                if (this.dgvDelitos.RowCount > 0)
+                {
+                    ActualizaCentroPenalDesdeCelda();
+                    this.btnEditarCentroPenales.Visible = true;
+                    this.btnBorrarCentroPenal.Visible = true;
+                }
             }
             catch (Exception er)
             {
@@ -896,8 +916,6 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
         #endregion
 
 
-
-
         #region pestana salario base
 
         #region carga lista de Salario base
@@ -915,6 +933,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             this.txtSalario.Text = "";
         }
 
+        #region actualiza campos salario base 
         private void ActualizaCampoSalarioBase()
         {
 
@@ -925,8 +944,10 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             oSalarioBase = this.dgvSalarioBase.Rows[0].DataBoundItem as SalarioBase;
 
             this.txtSalario.Text = Convert.ToString(oSalarioBase.Monto);
-        }
+        } 
+        #endregion
 
+        #region actualiza campos salario base y retorna objeto
         private SalarioBase ActualizaSalarioBase()
         {
 
@@ -940,7 +961,10 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             return oSalarioBase;
         }
+        
+        #endregion
 
+        #region inserta salario base
         private void btnAgregarSalario_Click(object sender, EventArgs e)
         {
 
@@ -973,13 +997,15 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
 
-        }
+        } 
+        #endregion
 
         private void btnCancelarSalario_Click(object sender, EventArgs e)
         {
             this.Cancelar();
         }
 
+        #region edita salario base
         private void btnEditarSalario_Click(object sender, EventArgs e)
         {
             try
@@ -1014,8 +1040,10 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+        } 
+        #endregion
 
+        #region delete logico salario base
         private void btnBorrarSalario_Click(object sender, EventArgs e)
         {
             try
@@ -1044,8 +1072,10 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } 
+        #endregion
 
+        #region selecciona salario desde dgv
         private void dgvSalarioBase_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -1081,15 +1111,20 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } 
+        #endregion
 
+        #region seleccion salario desde celda con el mouse
         private void dgvSalarioBase_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                this.ActualizaSalarioBase();
-                this.btnEditarSalario.Visible = true;
-                this.btnBorrarSalario.Visible = true;
+                if (this.dgvSalarioBase.RowCount > 0)
+                {
+                    this.ActualizaSalarioBase();
+                    this.btnEditarSalario.Visible = true;
+                    this.btnBorrarSalario.Visible = true;
+                }
             }
             catch (Exception er)
             {
@@ -1103,6 +1138,291 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
         } 
         #endregion
+
+
+        #endregion
+
+
+        #region pestana eventos
+
+
+        #region Get lista eventos
+        private void CargaDGVEventos()
+        {
+
+            this.dgvEventos.DataSource = GestorMantenimientos.GetInstacia().GetListaEventos();
+
+        } 
+        #endregion
+
+        #region inserta evento
+        private void btnAgregarEvento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProvider1.Clear();
+                if (Validaciones.GetInstancia().CampoRequerido(this.rtbEvento.Text))
+                {
+                    this.errorProvider1.SetError(this.rtbEvento, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (!this.rbNegativoEvento.Checked && !this.rbPositvoEvento.Checked)
+                {
+                    this.errorProvider1.SetError(this.gbEventos, "Campo requerido");
+                    return;
+                }
+
+
+
+                Eventos oEventos = new Eventos();
+
+                oEventos.Descripcion = this.rtbEvento.Text;
+
+
+                if (this.rbPositvoEvento.Checked)
+                {
+                    oEventos.Tipo = FactoriaTipoEventos.GetTipoEvento(TipoEventos.Positivo);
+                }
+                else
+                {
+                    oEventos.Tipo = FactoriaTipoEventos.GetTipoEvento(TipoEventos.Negativo);
+                }
+
+                GestorMantenimientos.GetInstacia().InsertNewEvento(oEventos);
+                this.CargaDGVEventos();
+                this.LimpiaEvento();
+
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } 
+        #endregion
+
+        private void btnCancelarEvento_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
+        }
+
+        #region edita evento
+        private void btnEditarEvento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                errorProvider1.Clear();
+
+                x = this.dgvEventos.SelectedCells[0].RowIndex;
+
+                Eventos oEventos = this.dgvEventos.Rows[x].DataBoundItem as Eventos;
+
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.rtbEvento.Text))
+                {
+                    this.errorProvider1.SetError(this.rtbEvento, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+
+                if (this.rbPositvoEvento.Checked)
+                {
+                    oEventos.Tipo = FactoriaTipoEventos.GetTipoEvento(TipoEventos.Positivo);
+                }
+                else
+                {
+                    oEventos.Tipo = FactoriaTipoEventos.GetTipoEvento(TipoEventos.Negativo);
+                }
+
+
+                oEventos.Descripcion = this.rtbEvento.Text;
+
+                GestorMantenimientos.GetInstacia().ActualizaEvento(oEventos);
+
+                this.CargaDGVEventos();
+                this.LimpiaEvento();
+                MessageBox.Show("Se ha modificado los datos");
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } 
+        #endregion
+
+        #region borrar evento
+        private void btnBorrarEvento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (MessageBox.Show("Esta seguro que desea borrar este evento?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    Eventos oEventos = this.ActualizaEventos();
+
+                    GestorMantenimientos.GetInstacia().DeleteLogicalEventos(oEventos);
+                    this.CargaDGVEventos();
+
+                    MessageBox.Show("Se ha eliminado los datos");
+                    this.LimpiaEvento();
+
+                }
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } 
+        #endregion
+
+        #region seleccion evento del dgv
+        private void dgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Eventos oEventos = new Eventos();
+
+
+                if (e.RowIndex >= 0 && this.dgvEventos.SelectedRows.Count > 0)
+                {
+
+                    if (e.RowIndex >= 0)
+                    {
+
+                        oEventos = this.dgvEventos.SelectedRows[0].DataBoundItem as Eventos;
+
+
+                        this.rtbEvento.Text = oEventos.Descripcion;
+
+                        this.btnBorrarEvento.Visible = true;
+                        this.btnEditarEvento.Visible = true;
+                    }
+
+                }
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        #endregion
+
+        #region seleccion evento desde celda con click
+        private void dgvEventos_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (this.dgvEventos.RowCount > 0)
+                {
+                    this.ActualizaEventos();
+                    this.btnBorrarEvento.Visible = true;
+                    this.btnEditarEvento.Visible = true;
+                }
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } 
+        #endregion
+
+        #region actualiza evento
+        private Eventos ActualizaEventos()
+        {
+            Eventos oEventos = new Eventos();
+
+            try
+            {
+
+
+                x = this.dgvEventos.SelectedCells[0].RowIndex;
+
+                oEventos = this.dgvEventos.Rows[x].DataBoundItem as Eventos;
+
+                this.rtbEvento.Text = oEventos.Descripcion;
+
+                if (oEventos.Tipo.Equals("Positivo"))
+                {
+                    this.rbPositvoEvento.Checked = true;
+                }
+                else
+                {
+                    this.rbNegativoEvento.Checked = true;
+                }
+
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return oEventos;
+        }
+        
+        #endregion
+
+        #region limpia evento
+        private void LimpiaEvento()
+        {
+
+            this.rtbEvento.Text = "";
+            this.rbPositvoEvento.Checked = false;
+            this.rbNegativoEvento.Checked = false;
+        }  
+        #endregion
+
+        #endregion
+
+
+
+
+
+
+
 
 
 

@@ -156,6 +156,42 @@ namespace UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos
 
         #endregion
 
+        #region inserta nuevo evento
+        public void InsertNewEvento(Eventos pEventos)
+        {
+            BLLEventos oBLLEventos = new BLLEventos();
+            oBLLEventos.InsertNewEvento(pEventos);
+        } 
+        #endregion
+
+        #region Get lista eventos
+        public List<Eventos> GetListaEventos()
+        {
+            BLLEventos oBLLEventos = new BLLEventos();
+            return oBLLEventos.GetListaEventos();
+        } 
+        #endregion
+
+        #region actualiza evento
+        public void ActualizaEvento(Eventos pEventos)
+        {
+            BLLEventos oBLLEventos = new BLLEventos();
+            oBLLEventos.ActualizaEvento(pEventos);
+        } 
+        #endregion
+
+        #region delete logico eventos
+        public void DeleteLogicalEventos(Eventos pEventos)
+        {
+            BLLEventos oBLLEventos = new BLLEventos();
+            oBLLEventos.DeleteLogicalEventos(pEventos);
+        } 
+        #endregion
+
+
+
+
+
 
 
 
