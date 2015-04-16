@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UTN.Winform.AppProyectopg3.Layers.Entities;
 using UTN.Winform.AppProyectopg3.Layers.Entities.DTO;
 using UTN.Winform.AppProyectopg3.Layers.Persistencia;
 
@@ -40,6 +41,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.DAL.DALMantenimientos
         }
 
          #region Obtiene lista de Delitos Reclusos
+
+
 
          public List<DelitosReclusos> GetListaDelitosReclusos(string ReclusosID)
          {

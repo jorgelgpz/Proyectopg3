@@ -99,6 +99,9 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.tbpEventos = new System.Windows.Forms.TabPage();
             this.dgvEventos = new System.Windows.Forms.DataGridView();
+            this.IDEventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionEventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBorrarEvento = new System.Windows.Forms.Button();
             this.btnEditarEvento = new System.Windows.Forms.Button();
@@ -112,12 +115,64 @@
             this.lblEvento = new System.Windows.Forms.Label();
             this.rtbEvento = new System.Windows.Forms.RichTextBox();
             this.tbpReclusos = new System.Windows.Forms.TabPage();
+            this.dgvDelitosReclusos = new System.Windows.Forms.DataGridView();
+            this.dgvEventosReclusos = new System.Windows.Forms.DataGridView();
+            this.txtSeccionReclusos = new System.Windows.Forms.TextBox();
+            this.txtCentroPenalReclusos = new System.Windows.Forms.TextBox();
+            this.btnAgregaSeccionReclusos = new System.Windows.Forms.Button();
+            this.btnAgregaCentroPenalReclusos = new System.Windows.Forms.Button();
+            this.btnAgregaDelitosReclusos = new System.Windows.Forms.Button();
+            this.rtbNotasReclusos = new System.Windows.Forms.RichTextBox();
+            this.btnAgregarEventoReclusos = new System.Windows.Forms.Button();
+            this.btnBuscarReclusos = new System.Windows.Forms.Button();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBorrarReclusos = new System.Windows.Forms.Button();
+            this.btnEditarReclusos = new System.Windows.Forms.Button();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelarReclusos = new System.Windows.Forms.Button();
+            this.btnAgregarReclusos = new System.Windows.Forms.Button();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.gbTrabajoReclusos = new System.Windows.Forms.GroupBox();
+            this.rbTrabajaSiRecluso = new System.Windows.Forms.RadioButton();
+            this.rbTrabajaNoRecluso = new System.Windows.Forms.RadioButton();
+            this.gbMedicoReclusos = new System.Windows.Forms.GroupBox();
+            this.rbMedicoSiRecluso = new System.Windows.Forms.RadioButton();
+            this.rbMedicoNoRecluso = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbFotoVarias = new System.Windows.Forms.RadioButton();
+            this.rbFotoHuellasReclusos = new System.Windows.Forms.RadioButton();
+            this.rbFotoReclusos = new System.Windows.Forms.RadioButton();
+            this.gbNoficacionesReclusos = new System.Windows.Forms.GroupBox();
+            this.rbNoficacionesSiReclusos = new System.Windows.Forms.RadioButton();
+            this.rbNoficacionesNoReclusos = new System.Windows.Forms.RadioButton();
+            this.pictureBoxReclusos = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtEmailReclusos = new System.Windows.Forms.TextBox();
+            this.txtApellidoReclusos = new System.Windows.Forms.TextBox();
+            this.txtNombreReclusos = new System.Windows.Forms.TextBox();
+            this.txtNacionalidadReclusos = new System.Windows.Forms.TextBox();
+            this.lblIdentificacionReclusos = new System.Windows.Forms.Label();
+            this.lblNacionalidadReclusos = new System.Windows.Forms.Label();
+            this.lblNombreReclusos = new System.Windows.Forms.Label();
+            this.lblApellidoReclusos = new System.Windows.Forms.Label();
+            this.lblEmailReclusos = new System.Windows.Forms.Label();
+            this.txtIdentificacionReclusos = new System.Windows.Forms.TextBox();
+            this.lblSimpeReclusos = new System.Windows.Forms.Label();
+            this.lblTipoSanguieoReclusos = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
+            this.lblTelefonoContactoReclusos = new System.Windows.Forms.Label();
+            this.lblNombreContactoReclusos = new System.Windows.Forms.Label();
+            this.txtSimpeReclusos = new System.Windows.Forms.TextBox();
+            this.txtSanguineoReclusos = new System.Windows.Forms.TextBox();
+            this.txtCivilReclusos = new System.Windows.Forms.TextBox();
+            this.txtTelefonoContactoReclusos = new System.Windows.Forms.TextBox();
+            this.txtNombreContactoReclusos = new System.Windows.Forms.TextBox();
             this.sstUser = new System.Windows.Forms.StatusStrip();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.IDEventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionEventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEventosReclusos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionEventosReclusos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEventosReclusos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbp.SuspendLayout();
             this.tbpNuevoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -145,6 +200,17 @@
             this.gbEventos.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tbpReclusos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelitosReclusos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEventosReclusos)).BeginInit();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.gbTrabajoReclusos.SuspendLayout();
+            this.gbMedicoReclusos.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.gbNoficacionesReclusos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReclusos)).BeginInit();
+            this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +226,7 @@
             this.tbp.Location = new System.Drawing.Point(0, 0);
             this.tbp.Name = "tbp";
             this.tbp.SelectedIndex = 0;
-            this.tbp.Size = new System.Drawing.Size(931, 558);
+            this.tbp.Size = new System.Drawing.Size(1303, 558);
             this.tbp.TabIndex = 0;
             this.tbp.SelectedIndexChanged += new System.EventHandler(this.tbp_SelectedIndexChanged);
             // 
@@ -176,7 +242,7 @@
             this.tbpNuevoUsuario.Location = new System.Drawing.Point(4, 24);
             this.tbpNuevoUsuario.Name = "tbpNuevoUsuario";
             this.tbpNuevoUsuario.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNuevoUsuario.Size = new System.Drawing.Size(923, 530);
+            this.tbpNuevoUsuario.Size = new System.Drawing.Size(1295, 530);
             this.tbpNuevoUsuario.TabIndex = 0;
             this.tbpNuevoUsuario.Text = "Nuevo Usuario";
             this.tbpNuevoUsuario.UseVisualStyleBackColor = true;
@@ -417,7 +483,7 @@
             this.tbpDelitos.Location = new System.Drawing.Point(4, 24);
             this.tbpDelitos.Name = "tbpDelitos";
             this.tbpDelitos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDelitos.Size = new System.Drawing.Size(923, 530);
+            this.tbpDelitos.Size = new System.Drawing.Size(1295, 530);
             this.tbpDelitos.TabIndex = 1;
             this.tbpDelitos.Text = "Delitos";
             this.tbpDelitos.UseVisualStyleBackColor = true;
@@ -549,7 +615,7 @@
             this.tbpCentroPenales.Location = new System.Drawing.Point(4, 24);
             this.tbpCentroPenales.Name = "tbpCentroPenales";
             this.tbpCentroPenales.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCentroPenales.Size = new System.Drawing.Size(923, 530);
+            this.tbpCentroPenales.Size = new System.Drawing.Size(1295, 530);
             this.tbpCentroPenales.TabIndex = 2;
             this.tbpCentroPenales.Text = "Centros Penales";
             this.tbpCentroPenales.UseVisualStyleBackColor = true;
@@ -758,7 +824,7 @@
             this.tbpSalario.Location = new System.Drawing.Point(4, 24);
             this.tbpSalario.Name = "tbpSalario";
             this.tbpSalario.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSalario.Size = new System.Drawing.Size(923, 530);
+            this.tbpSalario.Size = new System.Drawing.Size(1295, 530);
             this.tbpSalario.TabIndex = 3;
             this.tbpSalario.Text = "Salario";
             this.tbpSalario.UseVisualStyleBackColor = true;
@@ -889,7 +955,7 @@
             this.tbpEventos.Location = new System.Drawing.Point(4, 24);
             this.tbpEventos.Name = "tbpEventos";
             this.tbpEventos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpEventos.Size = new System.Drawing.Size(923, 530);
+            this.tbpEventos.Size = new System.Drawing.Size(1295, 530);
             this.tbpEventos.TabIndex = 4;
             this.tbpEventos.Text = "Eventos";
             this.tbpEventos.UseVisualStyleBackColor = true;
@@ -907,6 +973,26 @@
             this.dgvEventos.TabIndex = 3;
             this.dgvEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             this.dgvEventos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvEventos_MouseClick);
+            // 
+            // IDEventos
+            // 
+            this.IDEventos.DataPropertyName = "ID";
+            this.IDEventos.HeaderText = "ID";
+            this.IDEventos.Name = "IDEventos";
+            this.IDEventos.Visible = false;
+            // 
+            // DescripcionEventos
+            // 
+            this.DescripcionEventos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescripcionEventos.DataPropertyName = "Descripcion";
+            this.DescripcionEventos.HeaderText = "Descripcion";
+            this.DescripcionEventos.Name = "DescripcionEventos";
+            // 
+            // TipoEvento
+            // 
+            this.TipoEvento.DataPropertyName = "Tipo";
+            this.TipoEvento.HeaderText = "Tipo";
+            this.TipoEvento.Name = "TipoEvento";
             // 
             // tableLayoutPanel9
             // 
@@ -1047,19 +1133,572 @@
             // 
             // tbpReclusos
             // 
+            this.tbpReclusos.Controls.Add(this.dgvDelitosReclusos);
+            this.tbpReclusos.Controls.Add(this.dgvEventosReclusos);
+            this.tbpReclusos.Controls.Add(this.txtSeccionReclusos);
+            this.tbpReclusos.Controls.Add(this.txtCentroPenalReclusos);
+            this.tbpReclusos.Controls.Add(this.btnAgregaSeccionReclusos);
+            this.tbpReclusos.Controls.Add(this.btnAgregaCentroPenalReclusos);
+            this.tbpReclusos.Controls.Add(this.btnAgregaDelitosReclusos);
+            this.tbpReclusos.Controls.Add(this.rtbNotasReclusos);
+            this.tbpReclusos.Controls.Add(this.btnAgregarEventoReclusos);
+            this.tbpReclusos.Controls.Add(this.btnBuscarReclusos);
+            this.tbpReclusos.Controls.Add(this.tableLayoutPanel12);
+            this.tbpReclusos.Controls.Add(this.tableLayoutPanel11);
+            this.tbpReclusos.Controls.Add(this.lblNota);
+            this.tbpReclusos.Controls.Add(this.gbTrabajoReclusos);
+            this.tbpReclusos.Controls.Add(this.gbMedicoReclusos);
+            this.tbpReclusos.Controls.Add(this.groupBox1);
+            this.tbpReclusos.Controls.Add(this.gbNoficacionesReclusos);
+            this.tbpReclusos.Controls.Add(this.pictureBoxReclusos);
+            this.tbpReclusos.Controls.Add(this.tableLayoutPanel10);
             this.tbpReclusos.Location = new System.Drawing.Point(4, 24);
             this.tbpReclusos.Name = "tbpReclusos";
             this.tbpReclusos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpReclusos.Size = new System.Drawing.Size(923, 530);
+            this.tbpReclusos.Size = new System.Drawing.Size(1295, 530);
             this.tbpReclusos.TabIndex = 5;
             this.tbpReclusos.Text = "Reclusos";
             this.tbpReclusos.UseVisualStyleBackColor = true;
+            // 
+            // dgvDelitosReclusos
+            // 
+            this.dgvDelitosReclusos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDelitosReclusos.Location = new System.Drawing.Point(894, 221);
+            this.dgvDelitosReclusos.Name = "dgvDelitosReclusos";
+            this.dgvDelitosReclusos.Size = new System.Drawing.Size(390, 108);
+            this.dgvDelitosReclusos.TabIndex = 43;
+            // 
+            // dgvEventosReclusos
+            // 
+            this.dgvEventosReclusos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEventosReclusos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDEventosReclusos,
+            this.DescripcionEventosReclusos,
+            this.TipoEventosReclusos});
+            this.dgvEventosReclusos.Location = new System.Drawing.Point(894, 61);
+            this.dgvEventosReclusos.Name = "dgvEventosReclusos";
+            this.dgvEventosReclusos.Size = new System.Drawing.Size(390, 108);
+            this.dgvEventosReclusos.TabIndex = 42;
+            // 
+            // txtSeccionReclusos
+            // 
+            this.txtSeccionReclusos.Enabled = false;
+            this.txtSeccionReclusos.Location = new System.Drawing.Point(1028, 361);
+            this.txtSeccionReclusos.Name = "txtSeccionReclusos";
+            this.txtSeccionReclusos.Size = new System.Drawing.Size(256, 22);
+            this.txtSeccionReclusos.TabIndex = 41;
+            // 
+            // txtCentroPenalReclusos
+            // 
+            this.txtCentroPenalReclusos.Enabled = false;
+            this.txtCentroPenalReclusos.Location = new System.Drawing.Point(1028, 429);
+            this.txtCentroPenalReclusos.Name = "txtCentroPenalReclusos";
+            this.txtCentroPenalReclusos.Size = new System.Drawing.Size(256, 22);
+            this.txtCentroPenalReclusos.TabIndex = 40;
+            // 
+            // btnAgregaSeccionReclusos
+            // 
+            this.btnAgregaSeccionReclusos.Location = new System.Drawing.Point(894, 361);
+            this.btnAgregaSeccionReclusos.Name = "btnAgregaSeccionReclusos";
+            this.btnAgregaSeccionReclusos.Size = new System.Drawing.Size(118, 39);
+            this.btnAgregaSeccionReclusos.TabIndex = 39;
+            this.btnAgregaSeccionReclusos.Text = "Seccion Carcelaria";
+            this.btnAgregaSeccionReclusos.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregaCentroPenalReclusos
+            // 
+            this.btnAgregaCentroPenalReclusos.Location = new System.Drawing.Point(894, 429);
+            this.btnAgregaCentroPenalReclusos.Name = "btnAgregaCentroPenalReclusos";
+            this.btnAgregaCentroPenalReclusos.Size = new System.Drawing.Size(118, 39);
+            this.btnAgregaCentroPenalReclusos.TabIndex = 38;
+            this.btnAgregaCentroPenalReclusos.Text = "Centro Penal";
+            this.btnAgregaCentroPenalReclusos.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregaDelitosReclusos
+            // 
+            this.btnAgregaDelitosReclusos.Location = new System.Drawing.Point(1048, 175);
+            this.btnAgregaDelitosReclusos.Name = "btnAgregaDelitosReclusos";
+            this.btnAgregaDelitosReclusos.Size = new System.Drawing.Size(118, 39);
+            this.btnAgregaDelitosReclusos.TabIndex = 36;
+            this.btnAgregaDelitosReclusos.Text = "Agrega Delitos";
+            this.btnAgregaDelitosReclusos.UseVisualStyleBackColor = true;
+            this.btnAgregaDelitosReclusos.Click += new System.EventHandler(this.btnAgregaDelitosReclusos_Click);
+            // 
+            // rtbNotasReclusos
+            // 
+            this.rtbNotasReclusos.Location = new System.Drawing.Point(663, 206);
+            this.rtbNotasReclusos.Name = "rtbNotasReclusos";
+            this.rtbNotasReclusos.Size = new System.Drawing.Size(212, 211);
+            this.rtbNotasReclusos.TabIndex = 34;
+            this.rtbNotasReclusos.Text = "";
+            // 
+            // btnAgregarEventoReclusos
+            // 
+            this.btnAgregarEventoReclusos.Location = new System.Drawing.Point(1048, 16);
+            this.btnAgregarEventoReclusos.Name = "btnAgregarEventoReclusos";
+            this.btnAgregarEventoReclusos.Size = new System.Drawing.Size(118, 39);
+            this.btnAgregarEventoReclusos.TabIndex = 2;
+            this.btnAgregarEventoReclusos.Text = "Agrega Eventos";
+            this.btnAgregarEventoReclusos.UseVisualStyleBackColor = true;
+            this.btnAgregarEventoReclusos.Click += new System.EventHandler(this.btnAgregarEventoReclusos_Click);
+            // 
+            // btnBuscarReclusos
+            // 
+            this.btnBuscarReclusos.Location = new System.Drawing.Point(401, 19);
+            this.btnBuscarReclusos.Name = "btnBuscarReclusos";
+            this.btnBuscarReclusos.Size = new System.Drawing.Size(227, 63);
+            this.btnBuscarReclusos.TabIndex = 33;
+            this.btnBuscarReclusos.Text = "Buscar Reclusos";
+            this.btnBuscarReclusos.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel12.Controls.Add(this.btnBorrarReclusos, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnEditarReclusos, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(629, 444);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(246, 50);
+            this.tableLayoutPanel12.TabIndex = 32;
+            // 
+            // btnBorrarReclusos
+            // 
+            this.btnBorrarReclusos.Location = new System.Drawing.Point(126, 3);
+            this.btnBorrarReclusos.Name = "btnBorrarReclusos";
+            this.btnBorrarReclusos.Size = new System.Drawing.Size(115, 44);
+            this.btnBorrarReclusos.TabIndex = 3;
+            this.btnBorrarReclusos.Text = "Borrar";
+            this.btnBorrarReclusos.UseVisualStyleBackColor = true;
+            this.btnBorrarReclusos.Visible = false;
+            this.btnBorrarReclusos.Click += new System.EventHandler(this.btnBorrarReclusos_Click);
+            // 
+            // btnEditarReclusos
+            // 
+            this.btnEditarReclusos.Location = new System.Drawing.Point(3, 3);
+            this.btnEditarReclusos.Name = "btnEditarReclusos";
+            this.btnEditarReclusos.Size = new System.Drawing.Size(115, 44);
+            this.btnEditarReclusos.TabIndex = 2;
+            this.btnEditarReclusos.Text = "Editar";
+            this.btnEditarReclusos.UseVisualStyleBackColor = true;
+            this.btnEditarReclusos.Visible = false;
+            this.btnEditarReclusos.Click += new System.EventHandler(this.btnEditarReclusos_Click);
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.Controls.Add(this.btnCancelarReclusos, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.btnAgregarReclusos, 0, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(259, 444);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(256, 56);
+            this.tableLayoutPanel11.TabIndex = 31;
+            // 
+            // btnCancelarReclusos
+            // 
+            this.btnCancelarReclusos.Location = new System.Drawing.Point(131, 3);
+            this.btnCancelarReclusos.Name = "btnCancelarReclusos";
+            this.btnCancelarReclusos.Size = new System.Drawing.Size(115, 47);
+            this.btnCancelarReclusos.TabIndex = 1;
+            this.btnCancelarReclusos.Text = "Cancelar";
+            this.btnCancelarReclusos.UseVisualStyleBackColor = true;
+            this.btnCancelarReclusos.Click += new System.EventHandler(this.btnCancelarReclusos_Click);
+            // 
+            // btnAgregarReclusos
+            // 
+            this.btnAgregarReclusos.Location = new System.Drawing.Point(3, 3);
+            this.btnAgregarReclusos.Name = "btnAgregarReclusos";
+            this.btnAgregarReclusos.Size = new System.Drawing.Size(115, 47);
+            this.btnAgregarReclusos.TabIndex = 0;
+            this.btnAgregarReclusos.Text = "Agregar";
+            this.btnAgregarReclusos.UseVisualStyleBackColor = true;
+            this.btnAgregarReclusos.Click += new System.EventHandler(this.btnAgregarReclusos_Click);
+            // 
+            // lblNota
+            // 
+            this.lblNota.AutoSize = true;
+            this.lblNota.Location = new System.Drawing.Point(660, 179);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(41, 15);
+            this.lblNota.TabIndex = 27;
+            this.lblNota.Text = "Notas";
+            // 
+            // gbTrabajoReclusos
+            // 
+            this.gbTrabajoReclusos.Controls.Add(this.rbTrabajaSiRecluso);
+            this.gbTrabajoReclusos.Controls.Add(this.rbTrabajaNoRecluso);
+            this.gbTrabajoReclusos.Location = new System.Drawing.Point(238, 361);
+            this.gbTrabajoReclusos.Name = "gbTrabajoReclusos";
+            this.gbTrabajoReclusos.Size = new System.Drawing.Size(206, 56);
+            this.gbTrabajoReclusos.TabIndex = 26;
+            this.gbTrabajoReclusos.TabStop = false;
+            this.gbTrabajoReclusos.Text = "Trabaja";
+            // 
+            // rbTrabajaSiRecluso
+            // 
+            this.rbTrabajaSiRecluso.AutoSize = true;
+            this.rbTrabajaSiRecluso.Location = new System.Drawing.Point(46, 21);
+            this.rbTrabajaSiRecluso.Name = "rbTrabajaSiRecluso";
+            this.rbTrabajaSiRecluso.Size = new System.Drawing.Size(34, 19);
+            this.rbTrabajaSiRecluso.TabIndex = 0;
+            this.rbTrabajaSiRecluso.TabStop = true;
+            this.rbTrabajaSiRecluso.Text = "si";
+            this.rbTrabajaSiRecluso.UseVisualStyleBackColor = true;
+            // 
+            // rbTrabajaNoRecluso
+            // 
+            this.rbTrabajaNoRecluso.AutoSize = true;
+            this.rbTrabajaNoRecluso.Location = new System.Drawing.Point(142, 21);
+            this.rbTrabajaNoRecluso.Name = "rbTrabajaNoRecluso";
+            this.rbTrabajaNoRecluso.Size = new System.Drawing.Size(39, 19);
+            this.rbTrabajaNoRecluso.TabIndex = 1;
+            this.rbTrabajaNoRecluso.TabStop = true;
+            this.rbTrabajaNoRecluso.Text = "no";
+            this.rbTrabajaNoRecluso.UseVisualStyleBackColor = true;
+            // 
+            // gbMedicoReclusos
+            // 
+            this.gbMedicoReclusos.Controls.Add(this.rbMedicoSiRecluso);
+            this.gbMedicoReclusos.Controls.Add(this.rbMedicoNoRecluso);
+            this.gbMedicoReclusos.Location = new System.Drawing.Point(8, 444);
+            this.gbMedicoReclusos.Name = "gbMedicoReclusos";
+            this.gbMedicoReclusos.Size = new System.Drawing.Size(206, 56);
+            this.gbMedicoReclusos.TabIndex = 25;
+            this.gbMedicoReclusos.TabStop = false;
+            this.gbMedicoReclusos.Text = "Medico";
+            // 
+            // rbMedicoSiRecluso
+            // 
+            this.rbMedicoSiRecluso.AutoSize = true;
+            this.rbMedicoSiRecluso.Location = new System.Drawing.Point(46, 21);
+            this.rbMedicoSiRecluso.Name = "rbMedicoSiRecluso";
+            this.rbMedicoSiRecluso.Size = new System.Drawing.Size(34, 19);
+            this.rbMedicoSiRecluso.TabIndex = 0;
+            this.rbMedicoSiRecluso.TabStop = true;
+            this.rbMedicoSiRecluso.Text = "si";
+            this.rbMedicoSiRecluso.UseVisualStyleBackColor = true;
+            // 
+            // rbMedicoNoRecluso
+            // 
+            this.rbMedicoNoRecluso.AutoSize = true;
+            this.rbMedicoNoRecluso.Location = new System.Drawing.Point(142, 21);
+            this.rbMedicoNoRecluso.Name = "rbMedicoNoRecluso";
+            this.rbMedicoNoRecluso.Size = new System.Drawing.Size(39, 19);
+            this.rbMedicoNoRecluso.TabIndex = 1;
+            this.rbMedicoNoRecluso.TabStop = true;
+            this.rbMedicoNoRecluso.Text = "no";
+            this.rbMedicoNoRecluso.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbFotoVarias);
+            this.groupBox1.Controls.Add(this.rbFotoHuellasReclusos);
+            this.groupBox1.Controls.Add(this.rbFotoReclusos);
+            this.groupBox1.Location = new System.Drawing.Point(663, 31);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(212, 122);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de Foto";
+            // 
+            // rbFotoVarias
+            // 
+            this.rbFotoVarias.AutoSize = true;
+            this.rbFotoVarias.Location = new System.Drawing.Point(32, 74);
+            this.rbFotoVarias.Name = "rbFotoVarias";
+            this.rbFotoVarias.Size = new System.Drawing.Size(56, 19);
+            this.rbFotoVarias.TabIndex = 2;
+            this.rbFotoVarias.TabStop = true;
+            this.rbFotoVarias.Text = "Otros";
+            this.rbFotoVarias.UseVisualStyleBackColor = true;
+            // 
+            // rbFotoHuellasReclusos
+            // 
+            this.rbFotoHuellasReclusos.AutoSize = true;
+            this.rbFotoHuellasReclusos.Location = new System.Drawing.Point(32, 49);
+            this.rbFotoHuellasReclusos.Name = "rbFotoHuellasReclusos";
+            this.rbFotoHuellasReclusos.Size = new System.Drawing.Size(70, 19);
+            this.rbFotoHuellasReclusos.TabIndex = 1;
+            this.rbFotoHuellasReclusos.TabStop = true;
+            this.rbFotoHuellasReclusos.Text = "Huellas";
+            this.rbFotoHuellasReclusos.UseVisualStyleBackColor = true;
+            // 
+            // rbFotoReclusos
+            // 
+            this.rbFotoReclusos.AutoSize = true;
+            this.rbFotoReclusos.Location = new System.Drawing.Point(32, 23);
+            this.rbFotoReclusos.Name = "rbFotoReclusos";
+            this.rbFotoReclusos.Size = new System.Drawing.Size(50, 19);
+            this.rbFotoReclusos.TabIndex = 0;
+            this.rbFotoReclusos.TabStop = true;
+            this.rbFotoReclusos.Text = "Foto";
+            this.rbFotoReclusos.UseVisualStyleBackColor = true;
+            // 
+            // gbNoficacionesReclusos
+            // 
+            this.gbNoficacionesReclusos.Controls.Add(this.rbNoficacionesSiReclusos);
+            this.gbNoficacionesReclusos.Controls.Add(this.rbNoficacionesNoReclusos);
+            this.gbNoficacionesReclusos.Location = new System.Drawing.Point(8, 361);
+            this.gbNoficacionesReclusos.Name = "gbNoficacionesReclusos";
+            this.gbNoficacionesReclusos.Size = new System.Drawing.Size(206, 56);
+            this.gbNoficacionesReclusos.TabIndex = 24;
+            this.gbNoficacionesReclusos.TabStop = false;
+            this.gbNoficacionesReclusos.Text = "Notificaciones";
+            // 
+            // rbNoficacionesSiReclusos
+            // 
+            this.rbNoficacionesSiReclusos.AutoSize = true;
+            this.rbNoficacionesSiReclusos.Location = new System.Drawing.Point(46, 21);
+            this.rbNoficacionesSiReclusos.Name = "rbNoficacionesSiReclusos";
+            this.rbNoficacionesSiReclusos.Size = new System.Drawing.Size(34, 19);
+            this.rbNoficacionesSiReclusos.TabIndex = 0;
+            this.rbNoficacionesSiReclusos.TabStop = true;
+            this.rbNoficacionesSiReclusos.Text = "si";
+            this.rbNoficacionesSiReclusos.UseVisualStyleBackColor = true;
+            // 
+            // rbNoficacionesNoReclusos
+            // 
+            this.rbNoficacionesNoReclusos.AutoSize = true;
+            this.rbNoficacionesNoReclusos.Location = new System.Drawing.Point(142, 21);
+            this.rbNoficacionesNoReclusos.Name = "rbNoficacionesNoReclusos";
+            this.rbNoficacionesNoReclusos.Size = new System.Drawing.Size(39, 19);
+            this.rbNoficacionesNoReclusos.TabIndex = 1;
+            this.rbNoficacionesNoReclusos.TabStop = true;
+            this.rbNoficacionesNoReclusos.Text = "no";
+            this.rbNoficacionesNoReclusos.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxReclusos
+            // 
+            this.pictureBoxReclusos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxReclusos.Location = new System.Drawing.Point(401, 112);
+            this.pictureBoxReclusos.Name = "pictureBoxReclusos";
+            this.pictureBoxReclusos.Size = new System.Drawing.Size(227, 190);
+            this.pictureBoxReclusos.TabIndex = 1;
+            this.pictureBoxReclusos.TabStop = false;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.52047F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.47953F));
+            this.tableLayoutPanel10.Controls.Add(this.txtEmailReclusos, 1, 4);
+            this.tableLayoutPanel10.Controls.Add(this.txtApellidoReclusos, 1, 3);
+            this.tableLayoutPanel10.Controls.Add(this.txtNombreReclusos, 1, 2);
+            this.tableLayoutPanel10.Controls.Add(this.txtNacionalidadReclusos, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lblIdentificacionReclusos, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblNacionalidadReclusos, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lblNombreReclusos, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.lblApellidoReclusos, 0, 3);
+            this.tableLayoutPanel10.Controls.Add(this.lblEmailReclusos, 0, 4);
+            this.tableLayoutPanel10.Controls.Add(this.txtIdentificacionReclusos, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblSimpeReclusos, 0, 5);
+            this.tableLayoutPanel10.Controls.Add(this.lblTipoSanguieoReclusos, 0, 6);
+            this.tableLayoutPanel10.Controls.Add(this.lblEstadoCivil, 0, 7);
+            this.tableLayoutPanel10.Controls.Add(this.lblTelefonoContactoReclusos, 0, 8);
+            this.tableLayoutPanel10.Controls.Add(this.lblNombreContactoReclusos, 0, 9);
+            this.tableLayoutPanel10.Controls.Add(this.txtSimpeReclusos, 1, 5);
+            this.tableLayoutPanel10.Controls.Add(this.txtSanguineoReclusos, 1, 6);
+            this.tableLayoutPanel10.Controls.Add(this.txtCivilReclusos, 1, 7);
+            this.tableLayoutPanel10.Controls.Add(this.txtTelefonoContactoReclusos, 1, 8);
+            this.tableLayoutPanel10.Controls.Add(this.txtNombreContactoReclusos, 1, 9);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(8, 16);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 10;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(355, 329);
+            this.tableLayoutPanel10.TabIndex = 0;
+            // 
+            // txtEmailReclusos
+            // 
+            this.txtEmailReclusos.Location = new System.Drawing.Point(150, 131);
+            this.txtEmailReclusos.Name = "txtEmailReclusos";
+            this.txtEmailReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtEmailReclusos.TabIndex = 18;
+            // 
+            // txtApellidoReclusos
+            // 
+            this.txtApellidoReclusos.Location = new System.Drawing.Point(150, 99);
+            this.txtApellidoReclusos.Name = "txtApellidoReclusos";
+            this.txtApellidoReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtApellidoReclusos.TabIndex = 17;
+            // 
+            // txtNombreReclusos
+            // 
+            this.txtNombreReclusos.Location = new System.Drawing.Point(150, 67);
+            this.txtNombreReclusos.Name = "txtNombreReclusos";
+            this.txtNombreReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtNombreReclusos.TabIndex = 16;
+            // 
+            // txtNacionalidadReclusos
+            // 
+            this.txtNacionalidadReclusos.Location = new System.Drawing.Point(150, 35);
+            this.txtNacionalidadReclusos.Name = "txtNacionalidadReclusos";
+            this.txtNacionalidadReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtNacionalidadReclusos.TabIndex = 15;
+            // 
+            // lblIdentificacionReclusos
+            // 
+            this.lblIdentificacionReclusos.AutoSize = true;
+            this.lblIdentificacionReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdentificacionReclusos.Location = new System.Drawing.Point(3, 0);
+            this.lblIdentificacionReclusos.Name = "lblIdentificacionReclusos";
+            this.lblIdentificacionReclusos.Size = new System.Drawing.Size(100, 16);
+            this.lblIdentificacionReclusos.TabIndex = 0;
+            this.lblIdentificacionReclusos.Text = "Identificacion";
+            // 
+            // lblNacionalidadReclusos
+            // 
+            this.lblNacionalidadReclusos.AutoSize = true;
+            this.lblNacionalidadReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNacionalidadReclusos.Location = new System.Drawing.Point(3, 32);
+            this.lblNacionalidadReclusos.Name = "lblNacionalidadReclusos";
+            this.lblNacionalidadReclusos.Size = new System.Drawing.Size(97, 16);
+            this.lblNacionalidadReclusos.TabIndex = 1;
+            this.lblNacionalidadReclusos.Text = "Nacionalidad";
+            // 
+            // lblNombreReclusos
+            // 
+            this.lblNombreReclusos.AutoSize = true;
+            this.lblNombreReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreReclusos.Location = new System.Drawing.Point(3, 64);
+            this.lblNombreReclusos.Name = "lblNombreReclusos";
+            this.lblNombreReclusos.Size = new System.Drawing.Size(60, 16);
+            this.lblNombreReclusos.TabIndex = 2;
+            this.lblNombreReclusos.Text = "Nombre";
+            // 
+            // lblApellidoReclusos
+            // 
+            this.lblApellidoReclusos.AutoSize = true;
+            this.lblApellidoReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoReclusos.Location = new System.Drawing.Point(3, 96);
+            this.lblApellidoReclusos.Name = "lblApellidoReclusos";
+            this.lblApellidoReclusos.Size = new System.Drawing.Size(68, 16);
+            this.lblApellidoReclusos.TabIndex = 3;
+            this.lblApellidoReclusos.Text = "Apellidos";
+            // 
+            // lblEmailReclusos
+            // 
+            this.lblEmailReclusos.AutoSize = true;
+            this.lblEmailReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailReclusos.Location = new System.Drawing.Point(3, 128);
+            this.lblEmailReclusos.Name = "lblEmailReclusos";
+            this.lblEmailReclusos.Size = new System.Drawing.Size(50, 16);
+            this.lblEmailReclusos.TabIndex = 4;
+            this.lblEmailReclusos.Text = "E-mail";
+            // 
+            // txtIdentificacionReclusos
+            // 
+            this.txtIdentificacionReclusos.Location = new System.Drawing.Point(150, 3);
+            this.txtIdentificacionReclusos.Name = "txtIdentificacionReclusos";
+            this.txtIdentificacionReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtIdentificacionReclusos.TabIndex = 14;
+            // 
+            // lblSimpeReclusos
+            // 
+            this.lblSimpeReclusos.AutoSize = true;
+            this.lblSimpeReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSimpeReclusos.Location = new System.Drawing.Point(3, 160);
+            this.lblSimpeReclusos.Name = "lblSimpeReclusos";
+            this.lblSimpeReclusos.Size = new System.Drawing.Size(52, 16);
+            this.lblSimpeReclusos.TabIndex = 7;
+            this.lblSimpeReclusos.Text = "SIMPE";
+            // 
+            // lblTipoSanguieoReclusos
+            // 
+            this.lblTipoSanguieoReclusos.AutoSize = true;
+            this.lblTipoSanguieoReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoSanguieoReclusos.Location = new System.Drawing.Point(3, 192);
+            this.lblTipoSanguieoReclusos.Name = "lblTipoSanguieoReclusos";
+            this.lblTipoSanguieoReclusos.Size = new System.Drawing.Size(106, 16);
+            this.lblTipoSanguieoReclusos.TabIndex = 8;
+            this.lblTipoSanguieoReclusos.Text = "Tipo sanguineo";
+            // 
+            // lblEstadoCivil
+            // 
+            this.lblEstadoCivil.AutoSize = true;
+            this.lblEstadoCivil.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoCivil.Location = new System.Drawing.Point(3, 224);
+            this.lblEstadoCivil.Name = "lblEstadoCivil";
+            this.lblEstadoCivil.Size = new System.Drawing.Size(83, 16);
+            this.lblEstadoCivil.TabIndex = 9;
+            this.lblEstadoCivil.Text = "Estado civil";
+            // 
+            // lblTelefonoContactoReclusos
+            // 
+            this.lblTelefonoContactoReclusos.AutoSize = true;
+            this.lblTelefonoContactoReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoContactoReclusos.Location = new System.Drawing.Point(3, 256);
+            this.lblTelefonoContactoReclusos.Name = "lblTelefonoContactoReclusos";
+            this.lblTelefonoContactoReclusos.Size = new System.Drawing.Size(122, 16);
+            this.lblTelefonoContactoReclusos.TabIndex = 10;
+            this.lblTelefonoContactoReclusos.Text = "Telefono contacto";
+            // 
+            // lblNombreContactoReclusos
+            // 
+            this.lblNombreContactoReclusos.AutoSize = true;
+            this.lblNombreContactoReclusos.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreContactoReclusos.Location = new System.Drawing.Point(3, 288);
+            this.lblNombreContactoReclusos.Name = "lblNombreContactoReclusos";
+            this.lblNombreContactoReclusos.Size = new System.Drawing.Size(119, 16);
+            this.lblNombreContactoReclusos.TabIndex = 11;
+            this.lblNombreContactoReclusos.Text = "Nombre contacto";
+            // 
+            // txtSimpeReclusos
+            // 
+            this.txtSimpeReclusos.Location = new System.Drawing.Point(150, 163);
+            this.txtSimpeReclusos.Name = "txtSimpeReclusos";
+            this.txtSimpeReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtSimpeReclusos.TabIndex = 19;
+            // 
+            // txtSanguineoReclusos
+            // 
+            this.txtSanguineoReclusos.Location = new System.Drawing.Point(150, 195);
+            this.txtSanguineoReclusos.Name = "txtSanguineoReclusos";
+            this.txtSanguineoReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtSanguineoReclusos.TabIndex = 20;
+            // 
+            // txtCivilReclusos
+            // 
+            this.txtCivilReclusos.Location = new System.Drawing.Point(150, 227);
+            this.txtCivilReclusos.Name = "txtCivilReclusos";
+            this.txtCivilReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtCivilReclusos.TabIndex = 21;
+            // 
+            // txtTelefonoContactoReclusos
+            // 
+            this.txtTelefonoContactoReclusos.Location = new System.Drawing.Point(150, 259);
+            this.txtTelefonoContactoReclusos.Name = "txtTelefonoContactoReclusos";
+            this.txtTelefonoContactoReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtTelefonoContactoReclusos.TabIndex = 22;
+            // 
+            // txtNombreContactoReclusos
+            // 
+            this.txtNombreContactoReclusos.Location = new System.Drawing.Point(150, 291);
+            this.txtNombreContactoReclusos.Name = "txtNombreContactoReclusos";
+            this.txtNombreContactoReclusos.Size = new System.Drawing.Size(180, 22);
+            this.txtNombreContactoReclusos.TabIndex = 23;
             // 
             // sstUser
             // 
             this.sstUser.Location = new System.Drawing.Point(0, 561);
             this.sstUser.Name = "sstUser";
-            this.sstUser.Size = new System.Drawing.Size(942, 22);
+            this.sstUser.Size = new System.Drawing.Size(1303, 22);
             this.sstUser.TabIndex = 1;
             this.sstUser.Text = "statusStrip1";
             // 
@@ -1067,31 +1706,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // IDEventos
+            // IDEventosReclusos
             // 
-            this.IDEventos.DataPropertyName = "ID";
-            this.IDEventos.HeaderText = "ID";
-            this.IDEventos.Name = "IDEventos";
-            this.IDEventos.Visible = false;
+            this.IDEventosReclusos.DataPropertyName = "ID";
+            this.IDEventosReclusos.HeaderText = "ID";
+            this.IDEventosReclusos.Name = "IDEventosReclusos";
+            this.IDEventosReclusos.Visible = false;
             // 
-            // DescripcionEventos
+            // DescripcionEventosReclusos
             // 
-            this.DescripcionEventos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DescripcionEventos.DataPropertyName = "Descripcion";
-            this.DescripcionEventos.HeaderText = "Descripcion";
-            this.DescripcionEventos.Name = "DescripcionEventos";
+            this.DescripcionEventosReclusos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescripcionEventosReclusos.DataPropertyName = "Descripcion";
+            this.DescripcionEventosReclusos.HeaderText = "Descripcion";
+            this.DescripcionEventosReclusos.Name = "DescripcionEventosReclusos";
             // 
-            // TipoEvento
+            // TipoEventosReclusos
             // 
-            this.TipoEvento.DataPropertyName = "Tipo";
-            this.TipoEvento.HeaderText = "Tipo";
-            this.TipoEvento.Name = "TipoEvento";
+            this.TipoEventosReclusos.DataPropertyName = "Tipo";
+            this.TipoEventosReclusos.HeaderText = "Tipo";
+            this.TipoEventosReclusos.Name = "TipoEventosReclusos";
             // 
             // frmMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 583);
+            this.ClientSize = new System.Drawing.Size(1303, 583);
             this.Controls.Add(this.sstUser);
             this.Controls.Add(this.tbp);
             this.Name = "frmMantenimientos";
@@ -1132,6 +1771,23 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tbpReclusos.ResumeLayout(false);
+            this.tbpReclusos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelitosReclusos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEventosReclusos)).EndInit();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.gbTrabajoReclusos.ResumeLayout(false);
+            this.gbTrabajoReclusos.PerformLayout();
+            this.gbMedicoReclusos.ResumeLayout(false);
+            this.gbMedicoReclusos.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.gbNoficacionesReclusos.ResumeLayout(false);
+            this.gbNoficacionesReclusos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReclusos)).EndInit();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1229,5 +1885,60 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDEventos;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionEventos;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEvento;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBoxReclusos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Label lblIdentificacionReclusos;
+        private System.Windows.Forms.Label lblNacionalidadReclusos;
+        private System.Windows.Forms.Label lblNombreReclusos;
+        private System.Windows.Forms.Label lblApellidoReclusos;
+        private System.Windows.Forms.Label lblEmailReclusos;
+        private System.Windows.Forms.Label lblSimpeReclusos;
+        private System.Windows.Forms.Label lblTipoSanguieoReclusos;
+        private System.Windows.Forms.Label lblEstadoCivil;
+        private System.Windows.Forms.Label lblTelefonoContactoReclusos;
+        private System.Windows.Forms.Label lblNombreContactoReclusos;
+        private System.Windows.Forms.GroupBox gbNoficacionesReclusos;
+        private System.Windows.Forms.RadioButton rbNoficacionesSiReclusos;
+        private System.Windows.Forms.RadioButton rbNoficacionesNoReclusos;
+        private System.Windows.Forms.GroupBox gbTrabajoReclusos;
+        private System.Windows.Forms.RadioButton rbTrabajaSiRecluso;
+        private System.Windows.Forms.RadioButton rbTrabajaNoRecluso;
+        private System.Windows.Forms.GroupBox gbMedicoReclusos;
+        private System.Windows.Forms.RadioButton rbMedicoSiRecluso;
+        private System.Windows.Forms.RadioButton rbMedicoNoRecluso;
+        private System.Windows.Forms.TextBox txtEmailReclusos;
+        private System.Windows.Forms.TextBox txtApellidoReclusos;
+        private System.Windows.Forms.TextBox txtNombreReclusos;
+        private System.Windows.Forms.TextBox txtNacionalidadReclusos;
+        private System.Windows.Forms.TextBox txtIdentificacionReclusos;
+        private System.Windows.Forms.TextBox txtSimpeReclusos;
+        private System.Windows.Forms.TextBox txtSanguineoReclusos;
+        private System.Windows.Forms.TextBox txtCivilReclusos;
+        private System.Windows.Forms.TextBox txtTelefonoContactoReclusos;
+        private System.Windows.Forms.TextBox txtNombreContactoReclusos;
+        private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.RadioButton rbFotoVarias;
+        private System.Windows.Forms.RadioButton rbFotoHuellasReclusos;
+        private System.Windows.Forms.RadioButton rbFotoReclusos;
+        private System.Windows.Forms.Button btnBuscarReclusos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.Button btnBorrarReclusos;
+        private System.Windows.Forms.Button btnEditarReclusos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Button btnCancelarReclusos;
+        private System.Windows.Forms.Button btnAgregarReclusos;
+        private System.Windows.Forms.RichTextBox rtbNotasReclusos;
+        private System.Windows.Forms.Button btnAgregaDelitosReclusos;
+        private System.Windows.Forms.Button btnAgregarEventoReclusos;
+        private System.Windows.Forms.TextBox txtSeccionReclusos;
+        private System.Windows.Forms.TextBox txtCentroPenalReclusos;
+        private System.Windows.Forms.Button btnAgregaSeccionReclusos;
+        private System.Windows.Forms.Button btnAgregaCentroPenalReclusos;
+        private System.Windows.Forms.DataGridView dgvDelitosReclusos;
+        private System.Windows.Forms.DataGridView dgvEventosReclusos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDEventosReclusos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionEventosReclusos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEventosReclusos;
     }
 }

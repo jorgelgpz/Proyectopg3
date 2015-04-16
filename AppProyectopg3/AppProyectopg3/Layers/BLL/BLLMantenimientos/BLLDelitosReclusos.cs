@@ -37,16 +37,16 @@ namespace UTN.Winform.AppProyectopg3.Layers.BLL.BLLMantenimientos
             {
                 DelitosReclusos oDelitosReclusos = new DelitosReclusos();
 
-                oDelitosReclusos.ReclusosID = item.ReclusosID;
-                oDelitosReclusos.DelitosID = item.DelitosID;
                 oDelitosReclusos.FechaInicio = item.FechaInicio;
                 oDelitosReclusos.FechaSalida = item.FechaSalida;
 
                 foreach (Delitos delito in oDALDelitos.GetListaDelitos())
                 {
+
                     if (delito.Id == item.DelitosID)
                     {
-                        oDelitosReclusos.descripcion = delito.descripcion;
+                      
+                        oDelitosReclusos.Descripcion = delito.descripcion;
                     }
                 }
 

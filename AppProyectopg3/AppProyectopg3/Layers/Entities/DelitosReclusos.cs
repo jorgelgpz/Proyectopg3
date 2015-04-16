@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UTN.Winform.AppProyectopg3.Layers.Entities.DTO
+namespace UTN.Winform.AppProyectopg3.Layers.Entities
 {
     class DelitosReclusos
     {
@@ -13,7 +13,8 @@ namespace UTN.Winform.AppProyectopg3.Layers.Entities.DTO
         public int DelitosID { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaSalida { get; set; }
-        public string descripcion { get; set; }
+        public string Descripcion { get; set; }
+
 
     }
 }

@@ -14,6 +14,7 @@ using UTN.Winform.AppProyectopg3.Layers.Entities.DTO;
 using UTN.Winform.AppProyectopg3.Layers.Entities.Factories;
 using UTN.Winform.AppProyectopg3.Layers.Singleton;
 using UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos;
+using UTN.Winform.AppProyectopg3.Layers.Singleton.GestorMantenimientos.MetodosEstaticos;
 using UTN.Winform.AppProyectopg3.Layers.Util;
 
 
@@ -37,7 +38,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             {
 
                 this.CargarDGV();
-
+             
             }
 
             catch (Exception er)
@@ -102,6 +103,35 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                     this.btnBorrarEvento.Visible = false;
                     this.rbPositvoEvento.Checked = false;
                     this.rbNegativoEvento.Checked = false;
+
+                }
+
+                if (tbpReclusos.Focus())
+                {
+
+                    this.txtIdentificacionReclusos.Text = "";
+                    this.txtNacionalidadReclusos.Text = "";
+                    this.txtNombreReclusos.Text = "";
+                    this.txtApellidoReclusos.Text = "";
+                    this.txtEmailReclusos.Text = "";
+                    this.txtSimpeReclusos.Text = "";
+                    this.txtSanguineoReclusos.Text = "";
+                    this.txtCivilReclusos.Text = "";
+                    this.txtTelefonoContactoReclusos.Text = "";
+                    this.txtNombreReclusos.Text = "";
+                    this.rbNoficacionesSiReclusos.Checked = false;
+                    this.rbNoficacionesNoReclusos.Checked = false;
+                    this.rbMedicoNoRecluso.Checked = false;
+                    this.rbMedicoSiRecluso.Checked = false;
+                    this.rbTrabajaNoRecluso.Checked = false;
+                    this.rbTrabajaSiRecluso.Checked = false;
+                    this.rbFotoReclusos.Checked = false;
+                    this.rbFotoHuellasReclusos.Checked = false;
+                    this.rbFotoVarias.Checked = false;
+                    this.txtSeccionReclusos.Text = "";
+                    this.txtCentroPenalReclusos.Text = "";
+                    this.rtbNotasReclusos.Text = "";
+                    Estaticos.GetInstacia().LimpiaListaEventos();
 
                 }
 
@@ -933,7 +963,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             this.txtSalario.Text = "";
         }
 
-        #region actualiza campos salario base 
+        #region actualiza campos salario base
         private void ActualizaCampoSalarioBase()
         {
 
@@ -944,7 +974,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             oSalarioBase = this.dgvSalarioBase.Rows[0].DataBoundItem as SalarioBase;
 
             this.txtSalario.Text = Convert.ToString(oSalarioBase.Monto);
-        } 
+        }
         #endregion
 
         #region actualiza campos salario base y retorna objeto
@@ -961,7 +991,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             return oSalarioBase;
         }
-        
+
         #endregion
 
         #region inserta salario base
@@ -997,7 +1027,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             }
 
 
-        } 
+        }
         #endregion
 
         private void btnCancelarSalario_Click(object sender, EventArgs e)
@@ -1040,7 +1070,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } 
+        }
         #endregion
 
         #region delete logico salario base
@@ -1072,7 +1102,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         #endregion
 
         #region selecciona salario desde dgv
@@ -1111,7 +1141,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         #endregion
 
         #region seleccion salario desde celda con el mouse
@@ -1136,7 +1166,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } 
+        }
         #endregion
 
 
@@ -1152,7 +1182,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             this.dgvEventos.DataSource = GestorMantenimientos.GetInstacia().GetListaEventos();
 
-        } 
+        }
         #endregion
 
         #region inserta evento
@@ -1206,7 +1236,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } 
+        }
         #endregion
 
         private void btnCancelarEvento_Click(object sender, EventArgs e)
@@ -1264,7 +1294,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } 
+        }
         #endregion
 
         #region borrar evento
@@ -1296,7 +1326,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         #endregion
 
         #region seleccion evento del dgv
@@ -1336,7 +1366,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         #endregion
 
         #region seleccion evento desde celda con click
@@ -1360,7 +1390,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
                 MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         #endregion
 
         #region actualiza evento
@@ -1402,7 +1432,7 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
 
             return oEventos;
         }
-        
+
         #endregion
 
         #region limpia evento
@@ -1412,12 +1442,221 @@ namespace UTN.Winform.AppProyectopg3.Layers.UI
             this.rtbEvento.Text = "";
             this.rbPositvoEvento.Checked = false;
             this.rbNegativoEvento.Checked = false;
-        }  
+        }
         #endregion
 
+
+
         #endregion
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #region validaciones de campos de reclusos
+        private void ValidacionesCamposReclusos()
+        {
+
+            try
+            {
+
+                errorProvider1.Clear();
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtIdentificacionReclusos.Text) || Validaciones.GetInstancia().CampoNumerico(this.txtIdentificacionReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtIdentificacionReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtNacionalidadReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtNacionalidadReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtNombreReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtNombreReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtApellidoReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtApellidoReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtEmailReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtEmailReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtSimpeReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtSimpeReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtSanguineoReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtSanguineoReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtCivilReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtCivilReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtTelefonoContactoReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtTelefonoContactoReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtCentroPenalReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtCentroPenalReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtSeccionReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtSeccionReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (Validaciones.GetInstancia().CampoRequerido(this.txtNombreContactoReclusos.Text))
+                {
+                    errorProvider1.SetError(this.txtNombreContactoReclusos, Validaciones.GetInstancia().descripcion());
+                    return;
+                }
+
+                if (!rbNoficacionesSiReclusos.Checked && !rbNoficacionesNoReclusos.Checked)
+                {
+                    errorProvider1.SetError(this.gbNoficacionesReclusos, "Campo requerido");
+                    return;
+                }
+
+                if (!this.rbMedicoSiRecluso.Checked && !this.rbMedicoNoRecluso.Checked)
+                {
+                    errorProvider1.SetError(this.gbNoficacionesReclusos, "Campo requerido");
+                    return;
+                }
+
+                if (!this.rbTrabajaSiRecluso.Checked && !this.rbTrabajaNoRecluso.Checked)
+                {
+                    errorProvider1.SetError(this.gbNoficacionesReclusos, "Campo requerido");
+                    return;
+                }
+
+                if (this.rbFotoReclusos.Tag == null)
+                {
+                    errorProvider1.SetError(this.rbFotoReclusos, "Foto requerida");
+                    return;
+                }
+
+                if (this.rbFotoHuellasReclusos.Tag == null)
+                {
+                    errorProvider1.SetError(this.rbFotoReclusos, "Foto requerida");
+                    return;
+                }
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        #endregion
+
+        private void btnAgregarReclusos_Click(object sender, EventArgs e)
+        {
+            this.ValidacionesCamposReclusos();
+        }
+
+        private void btnCancelarReclusos_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
+        }
+
+        private void btnEditarReclusos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrarReclusos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarEventoReclusos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                frmEventosReclusos ofrmEventosReclusos = new frmEventosReclusos();
+                ofrmEventosReclusos.ShowDialog(this);
+                ofrmEventosReclusos.Close();
+
+                ////if (ofrmEventosReclusos.DialogResult != DialogResult.OK)
+                ////{
+                CargaDGVDelitosReclusos();
+
+
+
+
+                //}
+
+
+            }
+            catch (Exception er)
+            {
+
+                StringBuilder msg = new StringBuilder();
+                msg.AppendFormat("Message        {0}\n", er.Message);
+                msg.AppendFormat("Source         {0}\n", er.Source);
+
+
+                MessageBox.Show(msg.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargaDGVDelitosReclusos()
+        {
+            this.dgvEventosReclusos.DataSource = null;
+            this.dgvEventosReclusos.AutoGenerateColumns = false;
+            this.dgvEventosReclusos.DataSource = Estaticos.GetInstacia().GetListaEventos();
+        }
+
+        private void btnAgregaDelitosReclusos_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
 

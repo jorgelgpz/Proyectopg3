@@ -68,23 +68,34 @@
     <Compile Include="Layers\DAL\DALMantenimientos\DALSalarioBase.cs" />
     <Compile Include="Layers\Entities\CentroPenales.cs" />
     <Compile Include="Layers\Entities\Delitos.cs" />
-    <Compile Include="Layers\Entities\DTO\DelitosReclusos.cs" />
+    <Compile Include="Layers\Entities\DelitosReclusos.cs" />
+    <Compile Include="Layers\Entities\DTO\IDReclusos.cs" />
+    <Compile Include="Layers\Entities\DTO\LST_Eventos.cs" />
     <Compile Include="Layers\Entities\DTO\Users.cs" />
     <Compile Include="Layers\Entities\Eventos.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaTipoEventos.cs" />
     <Compile Include="Layers\Entities\Factories\FactoriaUsuario.cs" />
+    <Compile Include="Layers\Entities\Reclusos.cs" />
     <Compile Include="Layers\Entities\SalarioBase.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
     <Compile Include="Layers\Enumeraciones\TipoEventos.cs" />
     <Compile Include="Layers\Enumeraciones\TipoSeccionCarcelaria.cs" />
     <Compile Include="Layers\Enumeraciones\TipoUsuario.cs" />
+    <Compile Include="Layers\Interfaces\IID.cs" />
     <Compile Include="Layers\Interfaces\IUser.cs" />
     <Compile Include="Layers\Persistencia\DataBase.cs" />
     <Compile Include="Layers\Persistencia\DatabaseFactory.cs" />
     <Compile Include="Layers\Persistencia\FactoryConexion.cs" />
     <Compile Include="Layers\Singleton\GestorLoging.cs" />
     <Compile Include="Layers\Singleton\GestorMantenimientos\GestorMantenimientos.cs" />
+    <Compile Include="Layers\Singleton\GestorMantenimientos\MetodosEstaticos\Estaticos.cs" />
     <Compile Include="Layers\Singleton\GestorNewUser.cs" />
+    <Compile Include="Layers\UI\frmEventosReclusos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmEventosReclusos.Designer.cs">
+      <DependentUpon>frmEventosReclusos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layers\UI\frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +119,9 @@
     <Compile Include="Layers\Util\Validaciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Layers\UI\frmEventosReclusos.resx">
+      <DependentUpon>frmEventosReclusos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>

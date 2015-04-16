@@ -28,3 +28,4 @@ C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Properties.Resources.resources
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.csproj.GenerateResource.Cache
 C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\AppProyectopg3\obj\Debug\AppProyectopg3.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Documents\Visual Studio 2012\Projects\Proyectopg3\AppProyectopg3\AppProyectopg3\obj\Debug\UTN.Winform.AppProyectopg3.Layers.UI.frmEventosReclusos.resources
